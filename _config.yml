@@ -1,0 +1,11 @@
+url: "https://bagelbagel.world" # the base hostname & protocol for your site, e.g. http://example.com
+title: "Mat n Kez" # the name of your site, e.g. ACME Corp.
+plugins:
+  - jekyll-postcss
+  - jekyll-minifier
+image_base:  https://mathaywarduk.imgix.net/
+exclude:
+  - package-lock.json
+  - postcss.config.js
+  - tailwind.config.js
+  - publish.sh

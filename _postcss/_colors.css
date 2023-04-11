@@ -1,0 +1,86 @@
+:root{
+    --beige: #efe6d4;
+    --green-dark: #151917;
+    --grey-dark: #232C27;
+    --orange: #D9A775;
+}
+
+@layer utilities {
+  .b-beige {
+    background-color: var(--beige);
+  }
+
+  .c-beige {
+    color: var(--beige);
+  }
+
+  .br-beige {
+    border-color: var(--beige);
+  }
+
+  .b-green-dark {
+    background-color: var(--green-dark);
+  }
+
+  .c-green-dark {
+    color: var(--green-dark);
+  }
+
+  .c-grey-dark {
+    color: var(--grey-dark);
+  }
+
+  .b-grey-dark {
+    background-color: var(--grey-dark);
+  }
+
+  .c-orange {
+    color: var(--orange);
+  }
+
+  .b-orange {
+    background-color: var(--orange);
+  }
+
+  .b-black {
+    background-color: black;
+  }
+
+  .b-white {
+    background-color: white;
+  }
+
+  .c-black {
+    color: black;
+  }
+
+  .c-white {
+    color: white;
+  }
+}
+.b-green-dark--grad {
+  background-color: var(--green-dark);
+  background: linear-gradient(0deg, rgba(21, 25, 23, 1) 0%, rgba(21, 25, 23, 0) 100%);
+}
+
+.image-border-orange {
+  img {
+    @apply relative z-20;
+  }
+
+  &:after {
+    content: "";
+    @apply
+      absolute
+      w-full
+      h-full
+      top-1
+      -left-1
+      md:top-2.5
+      md:-left-2.5
+      z-10
+      b-orange
+      opacity-70
+    ;
+  }
+}
