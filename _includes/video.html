@@ -1,0 +1,6 @@
+<div class="drop-shadow-base shrink-0 w-auto relative snap-start" data-video>
+  <video class="w-auto h-[75vh] lg:h-[95vh]" loop muted>
+    <source src="{{ site.video_base }}{{ include.url | replace: 'mp4', 'webm' }}" type="video/webm" />
+    <source src="{{ site.video_base }}{{ include.url }}" type="video/mp4" />
+  </video>
+</div>

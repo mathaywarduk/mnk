@@ -1,155 +1,162 @@
-// // *******
-// // Toggler
-// // *******
+function ImageContent(el) {
+  const opener = el.querySelector("[data-image-content-open]");
+  const closer = el.querySelector("[data-image-content-close]");
+  const target = el.querySelector("[data-image-content-target]");
 
-// function Toggler(el) {
-//   const target = document.getElementById(el.getAttribute('aria-controls'));
-//   const fixed = el.dataset.toggleFixed;
-//   el.addEventListener("click", function(e) {
-//     el.classList.toggle("is-active");
-//     target.classList.toggle("is-active");
+  opener.addEventListener("click", function() {
+    target.classList.remove('opacity-0');
+    opener.classList.add('hidden');
+  });
 
+  closer.addEventListener("click", function() {
+    target.classList.add('opacity-0');
+    opener.classList.remove('hidden');
+  });
+}
 
-//     if (fixed !== undefined) {
-//       window.scrollTo(0, 0);
-//       document.querySelector("body").classList.toggle("overflow-hidden");
-//     }
-//   });
-// }
+function moveGallery(i, track, items, el) {
+    const count = items.length;
+    const prev = el.querySelector("[data-gallery-prev]");
+    const next = el.querySelector("[data-gallery-next]");
+    let additionalOffset = 30;
+    
+    if (i == 0) {
+      additionalOffset = 0;
+    }
 
+    // get offset of next item
+    track.style.marginLeft = "-" + (items[i].offsetLeft - additionalOffset) + "px";
 
-// // *********
-// // Blur Load
-// // *********
+    if (i == count - 1) {
+      next.classList.add('hidden');
+    } else {
+      next.classList.remove('hidden');
+    }
 
-// function updateImage(el, img, srcset) {
-//     // Check if source elements already exist
-//     let sources = el.querySelectorAll("source");
+    if (i == 0) {
+      prev.classList.add('hidden');
+    } else {
+      prev.classList.remove('hidden');
+    }
+}
 
-//     if (typeof(srcset) != "undefined" && sources.length < 1) {
+function activateGallery(el, reset) {
+  const track = el.querySelector("[data-gallery-track]");
+  const prev = el.querySelector("[data-gallery-prev]");
+  const next = el.querySelector("[data-gallery-next]");
+  const items = Array.from(track.children);
+  let i = 0;
+  let trackWidth = 0;
 
+  if (reset) {
+    track.style.marginLeft = 0;
+    i = 0;
+  }
 
-//       const webpSrcSet = srcset.replaceAll('?w=', '?fm=webp&w=');
+  prev.classList.add('hidden');
+  next.classList.remove('hidden');
 
-//       // Create source element for JPG
-//       const jpgSource = document.createElement("source");
-//       jpgSource.setAttribute("srcset", srcset);
-//       jpgSource.setAttribute("type", "image/jpeg");
+  items.forEach((element) => {
+    trackWidth = trackWidth + element.clientWidth + parseFloat(window.getComputedStyle(track).getPropertyValue("gap").replace("px",""));
+  });
 
-//       // Create source element for WEBP
-//       const webpSource = document.createElement("source");
-//       webpSource.setAttribute("srcset", webpSrcSet);
-//       webpSource.setAttribute("type", "image/webp");
+  if (trackWidth > window.innerWidth) {
 
-//       // Add source elements
-//       el.prepend(jpgSource);
-//       el.prepend(webpSource);
-//     }
-// }
+    next.addEventListener("click", function() {
 
-// function isInView(el) {
-//   const box = el.getBoundingClientRect();
-//   return box.top < window.innerHeight && box.bottom >= 0;
-// }
+      moveGallery(i+1, track, items, el);
 
-// function BlurLoad(el) {
-//   const img = el.querySelector("img");
-//   const srcset = img.dataset.srcset;
+      // increment current item
+      i++;
 
-//   // if in viewport and not large image
-//   if (isInView(el)) {
-//     updateImage(el, img, srcset);
-//   }
+      setTimeout(function () {
+        playPauseAllVideos();
+      }, 300);
+      
+    });
 
-//   // check on scroll/resize if in viewport
-//   document.addEventListener('scroll', function(e) {
-//     if (isInView(el)) {
-//       updateImage(el, img, srcset);
-//     }
-//   });
-//   document.addEventListener('resize', function(e) {
-//     if (isInView(el)) {
-//       updateImage(el, img, srcset);
-//     }
-//   });
-// }
+    prev.addEventListener("click", function() {
+      
+      moveGallery(i-1, track, items, el);
 
+      
+      // increment current item
+      i--;
 
-// // ************
-// // Image scroll
-// // ************
-// function ScrollElement(el) {
-//   const direction = el.dataset.scrollDirection;
-//   const elWidth = el.clientWidth;
-//   const elPosition = el.offsetTop;
-//   const stopPosition = elPosition + window.innerHeight;
-//   const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+      setTimeout(function () {
+        playPauseAllVideos();
+      }, 300);
+    });
 
-//   let newMargin = ((scrollPosition + window.innerHeight) - elPosition) / 3;
+    el.addEventListener("scrollend", function() {
+      playPauseAllVideos();
+    });
 
-//   if (direction == "rtl") {
-//     newMargin = 0 - newMargin;
-//   }
+  } else {
+    next.classList.add('hidden');
+  }
 
-//   el.style.marginLeft = newMargin + 'px';
+}
 
-// }
+function Gallery(el) {
 
-// function BindScroll(el) {
-//   if (isInView(el)) {
-//     ScrollElement(el);
-//   }
+  activateGallery(el, false);
 
-//   document.addEventListener('scroll', function(e) {
-//     if (isInView(el)) {
-//       ScrollElement(el);
-//     }
-//   });
-// }
+  window.addEventListener("resize", function() {
+    activateGallery(el, true);
+  });
 
-// function hideAllTabTargets(tabs) {
-//   tabs.forEach((element, index) => {
-//     const target = document.querySelector(element.dataset.tabsTarget);
-//     target.classList.add('hidden');
-//   });
-// }
+}
 
-// function BindTabs(el) {
-//   const tabsNav = el.querySelector("[data-tabs-nav]");
-//   const tabs = tabsNav.querySelectorAll("button");
-//   const tabsTitles = el.querySelectorAll("[data-tabs-title]");
+function isInViewport(el) {
 
-//   tabsNav.classList.remove("hidden");
-//   tabsTitles.forEach((element) => {
-//       element.classList.add("hidden");
-//   });
+  let rect = el.getBoundingClientRect();
 
-//   tabs.forEach((element, index) => {
-//     const target = document.querySelector(element.dataset.tabsTarget);
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+  );
+}
 
-//     if (index != 0) {
-//       target.classList.add('hidden');
-//     } else {
-//       element.classList.add("active");
-//     }
-
-//     element.addEventListener("click", function() {
-//       hideAllTabTargets(tabs);
-//       target.classList.remove('hidden');
-//       tabs.forEach((element) => {
-//         element.classList.remove('active');
-//       })
-//       this.classList.add('active');
-//     });
-
-//   });
-
-// }
+function playPause(video) {
 
 
-// window.addEventListener('DOMContentLoaded', (event) => {
-//   [...document.querySelectorAll("[data-toggle]")].map((el) => Toggler(el));
-//   [...document.querySelectorAll("[data-blur-load]")].map((el) => BlurLoad(el));
-//   [...document.querySelectorAll("[data-scroll-int]")].map((el) => BindScroll(el));
-//   [...document.querySelectorAll("[data-tabs]")].map((el) => BindTabs(el));
-// });
+  if (isInViewport(video)) {
+    video.play();
+  } else {
+    video.pause()
+  }
+}
+
+function playPauseAllVideos() {
+  document.querySelectorAll("video").forEach((element) => {
+    playPause(element);
+  });
+}
+
+function Video(el) {
+
+  const video = el.querySelector("video");
+  playPause(video);
+
+  window.addEventListener("scrollend", function() {
+    playPause(video);
+  });
+
+  window.addEventListener("resize", function() {
+    playPause(video);
+  });
+
+}
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  [...document.querySelectorAll("[data-image-content]")].map((el) => ImageContent(el));
+});
+
+window.addEventListener('load', (event) => {
+  [...document.querySelectorAll("[data-video]")].map((el) => Video(el));
+  [...document.querySelectorAll("[data-gallery]")].map((el) => Gallery(el));
+});

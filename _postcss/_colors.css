@@ -1,86 +1,37 @@
 :root{
-    --beige: #efe6d4;
-    --green-dark: #151917;
-    --grey-dark: #232C27;
-    --orange: #D9A775;
+    --buff-light: #f8eedd;
+    --buff: #f3e6d0;
+    --green-light: #579e6c;
+    --green: #417651;
+    --green-dark: #2e5339;
+    --grey-dark: #31230d;
 }
 
 @layer utilities {
-  .b-beige {
-    background-color: var(--beige);
-  }
 
-  .c-beige {
-    color: var(--beige);
-  }
+  /* Background colour  */
+  .b-buff-light { background-color: var(--buff-light); }
+  .b-buff { background-color: var(--buff); }
+  .b-green-light { background-color: var(--green-light); }
+  .b-green { background-color: var(--green); }
+  .b-green-dark { background-color: var(--green-dark); }
+  .b-grey-dark { background-color: var(--grey-dark); }
+  .b-white-35 { background-color: rgba(255, 255, 255, 0.35); }
+  .b-black-35 { background-color: rgba(0, 0, 0, 0.35); }
 
-  .br-beige {
-    border-color: var(--beige);
-  }
+  /* Text colour  */
+  .c-buff-light { color: var(--buff-light); }
+  .c-buff { color: var(--buff); }
+  .c-green-light { color: var(--green-light); }
+  .c-green { color: var(--green); }
+  .c-green-dark { color: var(--green-dark); }
+  .c-grey-dark { color: var(--grey-dark); }
 
-  .b-green-dark {
-    background-color: var(--green-dark);
-  }
-
-  .c-green-dark {
-    color: var(--green-dark);
-  }
-
-  .c-grey-dark {
-    color: var(--grey-dark);
-  }
-
-  .b-grey-dark {
-    background-color: var(--grey-dark);
-  }
-
-  .c-orange {
-    color: var(--orange);
-  }
-
-  .b-orange {
-    background-color: var(--orange);
-  }
-
-  .b-black {
-    background-color: black;
-  }
-
-  .b-white {
-    background-color: white;
-  }
-
-  .c-black {
-    color: black;
-  }
-
-  .c-white {
-    color: white;
-  }
-}
-.b-green-dark--grad {
-  background-color: var(--green-dark);
-  background: linear-gradient(0deg, rgba(21, 25, 23, 1) 0%, rgba(21, 25, 23, 0) 100%);
-}
-
-.image-border-orange {
-  img {
-    @apply relative z-20;
-  }
-
-  &:after {
-    content: "";
-    @apply
-      absolute
-      w-full
-      h-full
-      top-1
-      -left-1
-      md:top-2.5
-      md:-left-2.5
-      z-10
-      b-orange
-      opacity-70
-    ;
-  }
+  /* Border colour  */
+  .br-buff-light { border-color: var(--buff-light); }
+  .br-buff { border-color: var(--buff); }
+  .br-green-light { border-color: var(--green-light); }
+  .br-green { border-color: var(--green); }
+  .br-green-dark { border-color: var(--green-dark); }
+  .br-grey-dark { border-color: var(--grey-dark); }
 }

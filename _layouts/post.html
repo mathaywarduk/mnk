@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<header class="px-[3vw] mb-12 lg:container lg:grid lg:grid-cols-12 lg:min-h-screen lg:gap-4">
+  <div class="lg:col-span-8 lg:col-start-3 xl:lg-col-span-6">
+    <h1 class="my-2 lg:mb-4 lg:relative lg:z-20 lg:top-6">{{ page.title }}</h1>
+    <p class="uppercase tracking-extra mb-3">{{ page.location }}</p>
+    <h2 class="text-right -mb-[8px] md:-mb-[10px] relative z-10 lg:text-left lg:absolute lg:bottom-12">{{ page.month }}</h2>
+
+    <div class="bleed lg:absolute lg:top-0 lg:right-0 lg:m-0 lg:h-[110vh] lg:w-hero xl:w-hero-xl">
+      {% include image.html url=page.hero.url alt=page.hero.alt block_classes="w-full h-full block drop-shadow-base" classes="w-full h-full object-cover" width=600 height=900 %}
+    </div>
+
+  </div>
+</header>
+
+<section class="overflow-hidden w-full">
+  <div class="container grid grid-cols-4 lg:grid-cols-12 gap-3 lg:gap-4">
+    <div class="col-span-full md:col-span-3 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-3 snap-y snap-proximity">
+      {{ content }}
+
+      <div class="before:content-[''] before:bg-[currentColor] before:w-3 before:h-3 before:mr-2 font-bold lg:before:w-4 lg:before:h-4 my-6 inline-flex items-center">END</div>
+    </div>
+  </div>
+</section>

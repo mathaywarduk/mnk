@@ -1,4 +1,4 @@
 ---
 layout: home
-title: Bagel Bagel
+title: The Adventures of Mat & Kez
 ---
