@@ -4,7 +4,7 @@ echo "Enter new version number?"
 read v
 bundle exec jekyll build
 mv node_modules ..
-git checkout _site
+git checkout site
 mv _site ..
 rm -rf ./*
 mv ../_site/* .
