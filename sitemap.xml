@@ -1,7 +1,10 @@
+---
+layout: null
+---
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-      <loc>https://bagelbagel.world</loc>
-      <lastmod>2024-05-02T11:38:43+01:00</lastmod>
+      <loc>{{ site.url }}</loc>
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>

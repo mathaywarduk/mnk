@@ -1,0 +1,15 @@
+
+<a href="{{ post.url }}" class="relative pt-px group block pb-4 lg:pb-8
+before:content=[''] before:w-3 before:h-3 before:absolute before:top-1.5 before:-left-1 before:rounded-full before:b-green-light
+lg:before:top-auto lg:before:left-1/2 lg:before:-bottom-9 lg:before:-ml-1.5
+lg:after:content=[''] lg:after:w-px lg:after:b-green-light lg:after:h-full lg:after:absolute lg:after:-bottom-7 lg:after:left-1/2 lg:after:z-0
+">
+  <span class="uppercase tracking-wide lg:text-xs mb-1 inline-block ml-4
+    lg:absolute lg:-bottom-24 lg:ml-0 lg:left-0 lg:right-0 lg:text-center">{{ include.post.date | date: "%b" }}</span>
+  <div class="bleed relative lg:no-bleed lg:z-20">
+    <span class="uppercase tracking-extra block absolute top-4 left-4 z-30 group-hover:opacity-0 transition-all duration-700 ease-in-out lg:text-xs">{{ include.post.location }}</span>
+    {% include image.html url=include.post.hero.url alt=include.post.hero.alt block_classes="w-auto h-auto grayscale transition-all duration-700 ease-in-out drop-shadow-base group-hover:grayscale-0 group-hover:opacity-100" classes="w-full h-full" %}
+    <h3 class="text-2xl lg:text-lg absolute bottom-2 lg:mb-4 left-4 z-30 max-w-2/3 group-hover:opacity-0 transition-all duration-700 ease-in-out">{{ include.post.title }}</h3>
+    <div class="b-white absolute inset-0 z-20 mix-blend-lighten opacity-50 transition-all duration-700 ease-in-out group-hover:opacity-0"></div>
+  </div>
+</a>

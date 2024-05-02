@@ -1,0 +1,22 @@
+{% assign sizes = "(max-width: 2560px) 100vw, 2560px" %}
+
+<picture class="{{ include.block_classes }}">
+  <source sizes="{{ sizes }}"
+      srcset="{{ site.image_base }}{{ include.url }}?w=2560{{opts}} 2560w,
+    {{ site.image_base }}{{ include.url }}?w=1920&fm=webp{{opts}} 1920w,
+    {{ site.image_base }}{{ include.url }}?w=1600&fm=webp{{opts}} 1600w,
+    {{ site.image_base }}{{ include.url }}?w=1280&fm=webp{{opts}} 1280w,
+    {{ site.image_base }}{{ include.url }}?w=1024&fm=webp{{opts}} 1024w,
+    {{ site.image_base }}{{ include.url }}?w=768&fm=webp{{opts}} 768w,
+    {{ site.image_base }}{{ include.url }}?w=480&fm=webp{{opts}} 480w,
+    {{ site.image_base }}{{ include.url }}?w=300&fm=webp{{opts}} 300w" type="image/webp">
+  <img src="{{ site.image_base }}{{ include.url }}?w=300&q=30{{opts}}" alt="{{ include.alt }}" loading="lazy" sizes="{{ sizes }}" width="{{ include.width }}" height="{{ include.height }}" class="{{ include.classes }}"
+    srcset="{{ site.image_base }}{{ include.url }}?w=2560{{opts}} 2560w,
+    {{ site.image_base }}{{ include.url }}?w=1920{{opts}} 1920w,
+    {{ site.image_base }}{{ include.url }}?w=1600{{opts}} 1600w,
+    {{ site.image_base }}{{ include.url }}?w=1280{{opts}} 1280w,
+    {{ site.image_base }}{{ include.url }}?w=1024{{opts}} 1024w,
+    {{ site.image_base }}{{ include.url }}?w=768{{opts}} 768w,
+    {{ site.image_base }}{{ include.url }}?w=480{{opts}} 480w,
+    {{ site.image_base }}{{ include.url }}?w=300{{opts}} 300w">
+</picture>
