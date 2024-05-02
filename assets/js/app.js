@@ -1,3 +1,4 @@
+// *** IMAGE WITH CONTENT *** //
 function ImageContent(el) {
   const opener = el.querySelector("[data-image-content-open]");
   const closer = el.querySelector("[data-image-content-close]");
@@ -40,6 +41,7 @@ function moveGallery(i, track, items, el) {
     }
 }
 
+// *** GALLERY *** //
 function activateGallery(el, reset) {
   const track = el.querySelector("[data-gallery-track]");
   const prev = el.querySelector("[data-gallery-prev]");
@@ -108,6 +110,8 @@ function Gallery(el) {
 
 }
 
+// *** AUTOPLAY VIDEO *** //
+
 function isInViewport(el) {
 
   let rect = el.getBoundingClientRect();
@@ -151,7 +155,10 @@ function Video(el) {
 
 }
 
+// *** HORIZONTAL SCROLL *** //
 
+
+// *** INIT *** //
 window.addEventListener('DOMContentLoaded', (event) => {
   [...document.querySelectorAll("[data-image-content]")].map((el) => ImageContent(el));
 });

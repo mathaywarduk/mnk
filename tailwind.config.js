@@ -13,6 +13,9 @@ module.exports = {
       /* @link https://utopia.fyi/type/calculator?c=320,15,1.333,1240,26,1.333,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
       "zero": "0px",
+ 
+      /* Step -2: 8.4417px → 14.6323px */
+      xs: "clamp(0.5276rem, 0.393rem + 0.6729vi, 0.9145rem)",
 
       /* Step -1: 11.2528px → 19.5049px */
       sm: "clamp(0.7033rem, 0.5239rem + 0.897vi, 1.2191rem)",
@@ -46,17 +49,22 @@ module.exports = {
       },
       maxWidth: {
         "container": "102.5rem",
+        "2/3": "66.6666666%"
       },
       width: {
         "hero": "calc((100% - 80px)*0.33333)",
         "hero-xl": "calc((100% - 80px)*0.5)",
         "screen-scroll": "calc(100vw - 14px)",
+        18: "4.5rem",
+      },
+      height: {
+        18: "4.5rem",
       },
       dropShadow: {
         "base": "0 3px 5px rgba(0, 0, 0, 0.15)",
       },
       letterSpacing: {
-        "extra": "0.8rem",
+        "extra": "0.85rem",
       },
     },
   },

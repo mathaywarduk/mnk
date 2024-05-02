@@ -2,10 +2,63 @@
 layout: default
 ---
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+<h1 class="sr-only">{{ site.title }}</h1>
+
+<div class="lg:relative lg:h-screen"> 
+    <div class="container lg:no-container lg:flex lg:w-full lg:h-screen lg:overflow-x-auto lg:overflow-y-hidden lg:items-end">
+      <ul class="flex flex-col lg:flex-row lg:items-end border-spaced-left lg:border-spaced-bottom gap-8 lg:gap-32 lg:px-[25vw] lg:pb-44">
+      {% for post in site.posts %}
+        {% assign prevSeconds = currentDate | date: "%s" %}
+        {% assign currentDate = post.date %}
+        {% assign currentYear = currentDate | date: "%Y" %}
+        {% assign currentSeconds = currentDate | date: "%s" %}
+        {% assign diffSeconds = prevSeconds | minus: currentSeconds %}
+        {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+        
+
+        {% if forloop.first %}
+          {% assign margin = 0 %}
+        {% else %}
+          {% assign margin = diffDays | times: 2 %}
+        {% endif %}
+        
+        {% if currentYear != year %}
+          <li id="y{{currentDate | date: '%Y'}}" class="b-buff-light sticky top-5"><h2 class="text-2xl mb-4 lg:mb-0">{{ currentYear }}</h2></li>
+          {% assign year = currentYear %} 
+
+<!-- 
+          <style type="text/css">
+            #y{{currentDate | date: '%Y'}} {
+              margin-top: {{ margin }}px;
+
+              @media (min-width: 1024px) {
+                margin-top: 0;
+                margin-left: {{ margin }}px;
+              }
+            }
+          </style> -->
+        {% endif %}
+          <style type="text/css">
+            #post-{{post.slug}} {
+              margin-top: {{ margin }}px;
+
+              @media (min-width: 1024px) {
+                margin-top: 0;
+                margin-left: {{ margin }}px;
+              }
+            }
+          </style>
+        
+        <li id="post-{{ post.slug }}" class="shrink-0 {% if post.featured == true %} lg:w-96 {% else %} max-w-2/3 lg:w-52 pl-4 lg:pl-0 {% endif %}">
+          {% if post.featured %}
+            {% include teaser-featured.html post=post %}
+          {% else %}
+            {% include teaser.html post=post %}
+          {% endif %}
+        </li>
+
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

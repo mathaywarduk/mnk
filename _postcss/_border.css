@@ -1,0 +1,15 @@
+@layer utilities {
+  .border-spaced-left {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 10%, rgba(255, 255, 255, 0) 0%);
+    background-position: 2px 0px;
+    background-size: 1px 10px;
+    background-repeat: repeat-y;
+  }
+
+  .border-spaced-bottom {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.6) 10%, rgba(255, 255, 255, 0) 0%);
+    background-position: 0px calc(100% - 145px);
+    background-size: 10px 1px;
+    background-repeat: repeat-X;
+  }
+}
