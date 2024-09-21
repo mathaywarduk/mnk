@@ -8,6 +8,10 @@ module.exports = {
     './*.html',
     './*.md',
   ],
+  safelist: [
+    {pattern: /ml-./},
+    {pattern: /mt-./},
+  ],
   theme: {
     fontSize: {
       /* @link https://utopia.fyi/type/calculator?c=320,15,1.333,1240,26,1.333,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */

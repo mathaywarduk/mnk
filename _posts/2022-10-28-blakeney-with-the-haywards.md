@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Blakeney with the Hayward's"
+title:  "Blakeney with the Haywards"
 location: England
 month: October 2022
 hero:

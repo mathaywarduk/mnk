@@ -3,7 +3,7 @@ layout: default
 ---
 
 
-<a href="/#{{ page.slug }}" class="flex gap-2 text-sm fixed -top-6 right-5 z-30 lg:top-2/3 lg:right-auto lg:-left-9 lg:items-center group transition-all duration-200 ease-in-out hover:lg:-mt-3 focus:lg:-mt-3">
+<a href="/#post-{{ page.slug }}" class="flex gap-2 text-sm fixed -top-6 right-5 z-30 lg:top-2/3 lg:right-auto lg:-left-9 lg:items-center group transition-all duration-200 ease-in-out hover:lg:-mt-3 focus:lg:-mt-3">
   <span class="rounded-full block b-green-light w-12 h-12 flex items-center justify-center c-white group-hover:lg:w-18 group-hover:lg:h-18 group-focus:lg:w-18 group-focus:lg:h-18 transition-all duration-200 ease-in-out">
     <!-- <img src="/assets/images/arrow.svg" class="w-4 h-auto" role="presentation" width="76" height="51"> -->
     {% include svg/arrow.html class="w-4 h-auto -rotate-[90deg] mt-6 lg:rotate-180 lg:mt-0 lg:w-6 lg:opacity-0 group-hover:lg:ml-8 group-focus:lg:ml-8 group-hover:lg:opacity-100 group-focus:lg:opacity-100 transition-all duration-200 ease-in-out" %}
@@ -29,7 +29,7 @@ layout: default
     <div class="col-span-full md:col-span-3 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-3 snap-y snap-proximity">
       {{ content }}
 
-      <div class="before:content-[''] before:bg-[currentColor] before:w-3 before:h-3 before:mr-2 font-bold lg:before:w-4 lg:before:h-4 my-6 inline-flex items-center">END</div>
+      <div class="before:bg-[currentColor] before:w-3 before:h-3 before:mr-2 font-bold lg:before:w-4 lg:before:h-4 my-6 inline-flex items-center">END</div>
     </div>
   </div>
 </section>

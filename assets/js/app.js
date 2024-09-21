@@ -156,6 +156,15 @@ function Video(el) {
 }
 
 // *** HORIZONTAL SCROLL *** //
+function ScrollToHash(el){
+  const hash = window.location.hash;
+  const target = document.querySelector(hash);
+  if (window.innerWidth < 1024) {
+    target.scrollIntoView({ behavior: "smooth", block: "center" });
+  } else {
+    target.scrollIntoView({ behavior: "smooth", inline: "center" });
+  }
+}
 
 
 // *** INIT *** //
@@ -166,4 +175,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
 window.addEventListener('load', (event) => {
   [...document.querySelectorAll("[data-video]")].map((el) => Video(el));
   [...document.querySelectorAll("[data-gallery]")].map((el) => Gallery(el));
+  [...document.querySelectorAll("[data-scroll-to-hash]")].map((el) => ScrollToHash(el));
 });

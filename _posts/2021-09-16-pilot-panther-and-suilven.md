@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Pilot Panther, Munros and Suilven"
+location: Scotland
+month: September 2021
+hero:
+  url: Mat-Suilven.jpg
+  alt: Mat on Suilven
+seo:
+  title: Pilot Panther, Munros and Suilven - Scotland - September 2021
+  description:
+  image:
+    url: 
+    alt:
+featured: true
+---
+

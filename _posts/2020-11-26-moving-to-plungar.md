@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Moving to Plungar"
+location: England
+month: November 2020
+hero:
+  url: Mat-Kez-Plungar.jpg
+  alt: Mat and Kez outside the Plungar house on moving day
+seo:
+  title: Moving to Plungar - England - November 2020
+  description:
+  image:
+    url: 
+    alt:
+---
+
