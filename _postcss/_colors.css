@@ -4,6 +4,7 @@
     --green-light: #579e6c;
     --green: #417651;
     --green-dark: #2e5339;
+    --grey: #6E6555;
     --grey-dark: #31230d;
 }
 
@@ -15,6 +16,7 @@
   .b-green-light { background-color: var(--green-light); }
   .b-green { background-color: var(--green); }
   .b-green-dark { background-color: var(--green-dark); }
+  .b-grey { background-color: var(--grey); }
   .b-grey-dark { background-color: var(--grey-dark); }
   .b-white { background-color: white; }
   .b-black { background-color: black; }
@@ -27,6 +29,7 @@
   .c-green-light { color: var(--green-light); }
   .c-green { color: var(--green); }
   .c-green-dark { color: var(--green-dark); }
+  .c-grey { color: var(--grey); }
   .c-grey-dark { color: var(--grey-dark); }
   .c-white { color: white; }
   .c-black { color: black; }
@@ -37,8 +40,13 @@
   .br-green-light { border-color: var(--green-light); }
   .br-green { border-color: var(--green); }
   .br-green-dark { border-color: var(--green-dark); }
+  .br-grey { border-color: var(--grey); }
   .br-grey-dark { border-color: var(--grey-dark); }
   .br-white { border-color: white; }
   .br-black { border-color: black; }
   .br-black-60 { border-color: rgba(0, 0, 0, 0.6); }
+
+  /* Placeholder */
+
+  .placeholder-grey::placeholder { color: var(--grey); }
 }

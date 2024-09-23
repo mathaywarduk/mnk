@@ -4,7 +4,7 @@ layout: default
 
 <h1 class="sr-only">{{ site.title }}</h1>
 
-<div class="lg:relative lg:h-screen"> 
+<div class="absolute transition-all duration-500 ease-in-out top-[100vh] lg:top-auto lg:left-[100vh]" data-secret data-secret-classes="lg:h-screen top-auto lg:top-0 left-0" data-secret-remove-classes="top-[100vh] lg:top-auto lg:left-[100vh]"> 
     <div class="container lg:no-container lg:flex lg:w-full lg:h-screen lg:overflow-x-auto lg:overflow-y-hidden lg:items-end" data-scroll-to-hash>
       <ul class="flex flex-col lg:flex-row lg:items-end border-spaced-left lg:border-spaced-bottom gap-8 lg:gap-32 lg:px-[25vw] mb-[75vh] lg:mb-0 lg:pb-44">
       {% for post in site.posts %}

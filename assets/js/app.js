@@ -158,13 +158,36 @@ function Video(el) {
 // *** HORIZONTAL SCROLL *** //
 function ScrollToHash(el){
   const hash = window.location.hash;
-  const target = document.querySelector(hash);
-  if (window.innerWidth < 1024) {
-    target.scrollIntoView({ behavior: "smooth", block: "center" });
-  } else {
-    target.scrollIntoView({ behavior: "smooth", inline: "center" });
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (window.innerWidth < 1024) {
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      target.scrollIntoView({ behavior: "smooth", inline: "center" });
+    }
   }
 }
+
+
+
+// *** SECRETS *** //
+function Secret(el) {
+  const elements = document.querySelectorAll("[data-secret]");
+  const form = document.querySelector("[data-secret-form]");
+  el.addEventListener("keyup", function(e) {
+    if (this.value.toLowerCase() == 'rudirudi22') {
+      form.remove();
+      elements.forEach((element) => {
+        const removeClasses = element.dataset.secretRemoveClasses.split(" ");
+        const newClasses = element.dataset.secretClasses.split(" ");
+        element.classList.remove(...removeClasses);
+        element.classList.add(...newClasses);
+      });
+    }
+  })
+}
+
+
 
 
 // *** INIT *** //
@@ -176,4 +199,5 @@ window.addEventListener('load', (event) => {
   [...document.querySelectorAll("[data-video]")].map((el) => Video(el));
   [...document.querySelectorAll("[data-gallery]")].map((el) => Gallery(el));
   [...document.querySelectorAll("[data-scroll-to-hash]")].map((el) => ScrollToHash(el));
+  [...document.querySelectorAll("[data-secret-key]")].map((el) => Secret(el));
 });
