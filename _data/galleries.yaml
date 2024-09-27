@@ -10,16 +10,52 @@ benaan:
     alt: "Sarah and Vinnie on Ben A'an Summit"
   - url: "Highlands-005.jpg"
     alt: "Kerry and Ben A'an sunset"
-copper:
+copper-sunrise:
+  - url: "Bagel/Copper-023.mp4"
+    type: video
+copper-voil:
+  - url: "Bagel/Copper-018.mp4"
+    type: video
+  - url: "Bagel/Copper-032.jpg"
+    alt: "Reflections of Loch Voil"
+  - url: "Bagel/Copper-020.mp4"
+    type: video
+copper-doine:
   - url: "Bagel/Copper-006.jpg"
-    alt: "Swimming in Loch Doune"
+    alt: "Swimming in Loch Doine"
   - url: "Bagel/Copper-013.mp4"
     type: video
-  - url: "Bagel/Copper-008.jpg"
-    alt: "Swimming in Loch Doune"
-  - url: "Bagel/Copper-009.jpg"
-    alt: "Swimming in Loch Doune"
+  - url: "Bagel/Copper-030.jpg"
+    alt: "Swimming in Loch Doine"
+  - url: "Bagel/Copper-031.mp4"
+    type: video
   - url: "Bagel/Copper-007.jpg"
-    alt: "Swimming in Loch Doune"
+    alt: "Swimming in Loch Doine"
   - url: "Bagel/Copper-012.mp4"
     type: video
+  - url: "Bagel/Copper-008.jpg"
+    alt: "Swimming in Loch Doine"
+  - url: "Bagel/Copper-029.mp4"
+    type: video
+  - url: "Bagel/Copper-009.jpg"
+    alt: "Swimming in Loch Doine"
+  - url: "Bagel/Copper-022.mp4"
+    type: video
+copper-norman:
+  - url: "Bagel/Copper-024.jpg"
+    alt: "Kerry and Norman the baby cow"
+  - url: "Bagel/Copper-025.jpg"
+    alt: "Kerry and Norman the baby cow"
+  - url: "Bagel/Copper-001.jpg"
+    alt: "Norman the baby cow"
+  - url: "Bagel/Copper-004.jpg"
+    alt: "Kerry and Norman the baby cow"
+copper-walk:
+  - url: "Bagel/Copper-005.jpg"
+    alt: "Kerry walking in Monachyle Glen"
+  - url: "Bagel/Copper-026.jpg"
+    alt: "Rudi walking in Monachyle Glen"
+  - url: "Bagel/Copper-027.jpg"
+    alt: "Gusbourne at Monachyle"
+  - url: "Bagel/Copper-028.jpg"
+    alt: "Rudi at Monachyle"

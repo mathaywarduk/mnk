@@ -35,13 +35,26 @@ h3,
   ;
 }
 
-h1, h2, h3,
+h4,
+.h4 {
+  @apply
+    text-base
+    lg:text-md
+    font-serif
+    leading-none
+    mb-4
+    lg:mb-8
+  ;
+}
+
+h1, h2, h3, h4
 .font-serif {
   font-variation-settings: "wght" 700;
 }
 
 p + h2,
-p + h3 {
+p + h3,
+p + h4 {
   @apply
     mt-8
     lg:mt-16
