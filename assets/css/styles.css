@@ -1942,6 +1942,10 @@ video {
   border-radius: 9999px;
 }
 
+.rounded-none {
+  border-radius: 0px;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -2200,6 +2204,10 @@ h1,
   font-family: marlide-display-variable, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: clamp(2.96rem, 2.205rem + 3.7751vi, 5.1307rem);
   line-height: 1;
+}
+
+h4 h1,
+h4 .h1 {
   font-variation-settings: "wght" 700;
 }
 
@@ -2222,6 +2230,10 @@ h2,
   font-family: marlide-display-variable, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: clamp(1.6658rem, 1.2409rem + 2.1245vi, 2.8874rem);
   line-height: 1;
+}
+
+h4 h2,
+h4 .h2 {
   font-variation-settings: "wght" 700;
 }
 
@@ -2238,6 +2250,10 @@ h3,
   font-family: marlide-display-variable, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: clamp(1.2497rem, 0.9309rem + 1.5938vi, 2.1661rem);
   line-height: 1;
+}
+
+h4 h3,
+h4 .h3 {
   font-variation-settings: "wght" 700;
 }
 
@@ -2248,19 +2264,40 @@ h3,
     font-size: clamp(1.6658rem, 1.2409rem + 2.1245vi, 2.8874rem);
   }
 }
-h1, h2, h3,
-.font-serif {
+h4,
+.h4 {
+  margin-bottom: 1rem;
+  font-family: marlide-display-variable, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: clamp(0.9375rem, 0.6984rem + 1.1957vi, 1.625rem);
+  line-height: 1;
+}
+
+h4 h4,
+h4 .h4 {
+  font-variation-settings: "wght" 700;
+}
+
+@media (min-width: 1024px) {
+  h4,
+  .h4 {
+    margin-bottom: 2rem;
+    font-size: clamp(1.2497rem, 0.9309rem + 1.5938vi, 2.1661rem);
+  }
+}
+h1, h2, h3, h4 .font-serif {
   font-variation-settings: "wght" 700;
 }
 
 p + h2,
-p + h3 {
+p + h3,
+p + h4 {
   margin-top: 2rem;
 }
 
 @media (min-width: 1024px) {
   p + h2,
-  p + h3 {
+  p + h3,
+  p + h4 {
     margin-top: 4rem;
   }
 }
