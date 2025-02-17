@@ -16,29 +16,35 @@ function ImageContent(el) {
 }
 
 function moveGallery(i, track, items, el) {
-    const count = items.length;
-    const prev = el.querySelector("[data-gallery-prev]");
-    const next = el.querySelector("[data-gallery-next]");
-    let additionalOffset = 30;
-    
-    if (i == 0) {
-      additionalOffset = 0;
-    }
+  const count = items.length;
+  const prev = el.querySelector("[data-gallery-prev]");
+  const next = el.querySelector("[data-gallery-next]");
+  let additionalOffset = 30;
+  
+  if (i == 0) {
+    additionalOffset = 0;
+  }
 
-    // get offset of next item
-    track.style.marginLeft = "-" + (items[i].offsetLeft - additionalOffset) + "px";
+  // get offset of next item
+  track.style.marginLeft = "-" + (items[i].offsetLeft - additionalOffset) + "px";
 
-    if (i == count - 1) {
-      next.classList.add('hidden');
-    } else {
-      next.classList.remove('hidden');
-    }
+  if (i == count - 1) {
+    next.classList.add('hidden');
+  } else {
+    next.classList.remove('hidden');
+  }
 
-    if (i == 0) {
-      prev.classList.add('hidden');
-    } else {
-      prev.classList.remove('hidden');
-    }
+  if (i == 0) {
+    prev.classList.add('hidden');
+  } else {
+    prev.classList.remove('hidden');
+  }
+
+  items.forEach((element) => {
+    element.classList.remove('is-active');
+  });
+
+  items[i].classList.add('is-active');
 }
 
 // *** GALLERY *** //
@@ -57,6 +63,8 @@ function activateGallery(el, reset) {
 
   prev.classList.add('hidden');
   next.classList.remove('hidden');
+
+  items[0].classList.add('is-active');
 
   items.forEach((element) => {
     trackWidth = trackWidth + element.clientWidth + parseFloat(window.getComputedStyle(track).getPropertyValue("gap").replace("px",""));
@@ -127,8 +135,7 @@ function isInViewport(el) {
 
 function playPause(video) {
 
-
-  if (isInViewport(video)) {
+  if (isInViewport(video) && video.parentNode.classList.contains('is-active')) {
     video.play();
   } else {
     video.pause()
