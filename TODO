@@ -1,0 +1,4 @@
+- Update carousels
+  - Add thumbnail image to each video
+  - Load video of active slide and in viewport
+  - Unload video (return to image) if inactive slide / out of viewport

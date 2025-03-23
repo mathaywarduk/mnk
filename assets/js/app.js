@@ -16,29 +16,35 @@ function ImageContent(el) {
 }
 
 function moveGallery(i, track, items, el) {
-    const count = items.length;
-    const prev = el.querySelector("[data-gallery-prev]");
-    const next = el.querySelector("[data-gallery-next]");
-    let additionalOffset = 30;
-    
-    if (i == 0) {
-      additionalOffset = 0;
-    }
+  const count = items.length;
+  const prev = el.querySelector("[data-gallery-prev]");
+  const next = el.querySelector("[data-gallery-next]");
+  let additionalOffset = 30;
+  
+  if (i == 0) {
+    additionalOffset = 0;
+  }
 
-    // get offset of next item
-    track.style.marginLeft = "-" + (items[i].offsetLeft - additionalOffset) + "px";
+  // get offset of next item
+  track.style.marginLeft = "-" + (items[i].offsetLeft - additionalOffset) + "px";
 
-    if (i == count - 1) {
-      next.classList.add('hidden');
-    } else {
-      next.classList.remove('hidden');
-    }
+  if (i == count - 1) {
+    next.classList.add('hidden');
+  } else {
+    next.classList.remove('hidden');
+  }
 
-    if (i == 0) {
-      prev.classList.add('hidden');
-    } else {
-      prev.classList.remove('hidden');
-    }
+  if (i == 0) {
+    prev.classList.add('hidden');
+  } else {
+    prev.classList.remove('hidden');
+  }
+
+  items.forEach((element) => {
+    element.classList.remove('is-active');
+  });
+
+  items[i].classList.add('is-active');
 }
 
 // *** GALLERY *** //
@@ -57,6 +63,8 @@ function activateGallery(el, reset) {
 
   prev.classList.add('hidden');
   next.classList.remove('hidden');
+
+  items[0].classList.add('is-active');
 
   items.forEach((element) => {
     trackWidth = trackWidth + element.clientWidth + parseFloat(window.getComputedStyle(track).getPropertyValue("gap").replace("px",""));
@@ -127,8 +135,7 @@ function isInViewport(el) {
 
 function playPause(video) {
 
-
-  if (isInViewport(video)) {
+  if (isInViewport(video) && video.parentNode.classList.contains('is-active')) {
     video.play();
   } else {
     video.pause()
@@ -150,9 +157,9 @@ function Video(el) {
     playPause(video);
   });
 
-  window.addEventListener("resize", function() {
+  window.addEventListener("resize",debounce(function(e){
     playPause(video);
-  });
+  }));
 
 }
 
@@ -169,62 +176,14 @@ function ScrollToHash(el){
   }
 }
 
-
-
-// *** SECRETS *** //
-
-function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-  const expires = `expires=${d.toUTCString()}`;
-  document.cookie = `${cname}=${cvalue};${expires};path=/`;
+// *** DEBOUNCE *** //
+function debounce(func){
+  var timer;
+  return function(event){
+    if(timer) clearTimeout(timer);
+    timer = setTimeout(func,100,event);
+  };
 }
-
-// Read cookie
-function getCookie(cname) {
-  const name = `${cname}=`;
-  const decodedCookie = decodeURIComponent(document.cookie);
-  const ca = decodedCookie.split(";");
-  for (let i = 0; i < ca.length; i += 1) {
-    let c = ca[i];
-    while (c.charAt(0) === " ") {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) === 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function showContent(form, elements) {
-  document.body.classList.remove('overflow-hidden');
-  form.remove();
-  elements.forEach((element) => {
-    const removeClasses = element.dataset.secretRemoveClasses.split(" ");
-    const newClasses = element.dataset.secretClasses.split(" ");
-    element.classList.remove(...removeClasses);
-    element.classList.add(...newClasses);
-      setCookie('authenticated', 1, 365);
-  });
-}
-
-
-function Secret(el) {
-  const elements = document.querySelectorAll("[data-secret]");
-  const form = document.querySelector("[data-secret-form]");
-  if (getCookie('authenticated') === "1") {
-      showContent(form, elements);
-  } else {
-    el.addEventListener("keyup", function(e) {
-      if (this.value.toLowerCase() == 'rudirudi22') {
-        showContent(form, elements);
-      }
-    });
-  }
-}
-
-
 
 
 // *** INIT *** //
@@ -236,5 +195,4 @@ window.addEventListener('load', (event) => {
   [...document.querySelectorAll("[data-video]")].map((el) => Video(el));
   [...document.querySelectorAll("[data-gallery]")].map((el) => Gallery(el));
   [...document.querySelectorAll("[data-scroll-to-hash]")].map((el) => ScrollToHash(el));
-  [...document.querySelectorAll("[data-secret-key]")].map((el) => Secret(el));
 });
