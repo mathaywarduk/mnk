@@ -6,11 +6,5 @@ month: December 2021
 hero:
   url: Anglesey-Christmas.jpg
   alt: Sunset from Newborough Beach
-seo:
-  title: Anglesey at Christmas - Wales - December 2021
-  description:
-  image:
-    url: 
-    alt:
 ---
 

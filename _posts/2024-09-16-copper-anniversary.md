@@ -6,12 +6,6 @@ month: September 2024
 hero:
   url: Kerry-Norman.jpg
   alt: Kerry and Norman the baby cow
-seo:
-  title: Copper anniversary at Monachyle - Scotland - September 2024
-  description:
-  image:
-    url: 
-    alt:
 ---
 
 One of our best anniversary trips! We popped up to Monachyle Mhor for a couple of nights and were blessed with sunshine the whole time.

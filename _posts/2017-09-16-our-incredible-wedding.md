@@ -6,12 +6,6 @@ month: September 2017
 hero:
   url: Wedding-Kez-Mat.jpg
   alt: Kerry and Mat at Glentruim
-seo:
-  title: Our incredible wedding - Scotland - September 2017
-  description:
-  image:
-    url: 
-    alt:
 featured: true
 ---
 

@@ -6,12 +6,6 @@ month: September 2020
 hero:
   url: NC500-024.jpg
   alt: "Kerry and Rudi on Stac Pollaidh"
-seo:
-  title: Sunsets and Private Coves - Scotland - September 2020
-  description:
-  image:
-    url: 
-    alt:
 featured: true
 ---
 

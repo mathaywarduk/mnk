@@ -6,12 +6,6 @@ month: August 2020
 hero:
   url: Lakes-002.jpg
   alt: "Kerry and Rudi on Stac Pollaidh"
-seo:
-  title: Lockdown busting Lakes - England - August 2020
-  description:
-  image:
-    url: 
-    alt:
 ---
 
 

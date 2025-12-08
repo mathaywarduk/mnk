@@ -6,11 +6,5 @@ month: {MONTH} {YEAR}
 hero:
   url: {HERO_IMG}
   alt: {HERO_ALT}
-seo:
-  title: {TITLE} - {LOCATION} - {MONTH} {YEAR}
-  description:
-  image:
-    url: 
-    alt:
 ---
 
