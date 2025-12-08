@@ -1,5 +1,8 @@
 <div class="drop-shadow-base shrink-0 w-auto relative snap-start {{ include.block_classes }}" data-video>
-  <video class="{{ include.classes }}" loop muted playsinline>
+
+  {% include image.html url=include.placeholder alt=include.alt block_classes="relative z-20" classes="w-auto h-full" %}
+
+  <video class="{{ include.classes }}" preload="none" loop muted playsinline class="absolute inset-0 z-10">
     <source src="{{ site.video_base }}{{ include.url | replace: 'mp4', 'webm' }}" type="video/webm" />
     <source src="{{ site.video_base }}{{ include.url }}" type="video/mp4" />
   </video>

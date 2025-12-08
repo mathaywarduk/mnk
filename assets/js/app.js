@@ -122,43 +122,65 @@ function Gallery(el) {
 
 function isInViewport(el) {
 
-  let rect = el.getBoundingClientRect();
+  const rect = el.getBoundingClientRect();
+  const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  const visibleWidth = Math.min(rect.right, viewportWidth) - Math.max(rect.left, 0);
+  const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+
+  if (visibleWidth <= 0 || visibleHeight <= 0) return false;
+
+  const elementWidth = rect.width || el.offsetWidth;
+  const elementHeight = rect.height || el.offsetHeight;
 
   return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
-    
+    visibleWidth >= elementWidth / 2 &&
+    visibleHeight >= elementHeight / 2
   );
 }
 
-function playPause(video) {
+function playPause(video, hidePlaceholderOnPause) {
+  const container = video.closest('[data-video]');
+  const placeholder = container.querySelector('picture');
 
-  if (isInViewport(video) && video.parentNode.classList.contains('is-active')) {
+  const isVisible =
+    isInViewport(container) &&
+    container.classList.contains('is-active');
+
+  if (isVisible) {
+    if (placeholder) {
+      placeholder.classList.remove('z-20');
+      placeholder.classList.add('z-0');
+    }
     video.play();
   } else {
-    video.pause()
+    video.pause();
+    if (placeholder && hidePlaceholderOnPause) {
+      placeholder.classList.remove('z-0');
+      placeholder.classList.add('z-20');
+      video.currentTime = 0;
+    }
   }
 }
 
 function playPauseAllVideos() {
   document.querySelectorAll("video").forEach((element) => {
-    playPause(element);
+    playPause(element, true);
   });
 }
 
 function Video(el) {
 
   const video = el.querySelector("video");
-  playPause(video);
+  playPause(video, false);
 
   window.addEventListener("scrollend", function() {
-    playPause(video);
+    playPause(video, false);
   });
 
   window.addEventListener("resize",debounce(function(e){
-    playPause(video);
+    playPause(video, false);
   }));
 
 }

@@ -53,7 +53,7 @@ module.exports = {
       },
       maxWidth: {
         "container": "102.5rem",
-        "2/3": "66.6666666%"
+        "2/3": "66.6666666%",
       },
       width: {
         "hero": "calc((100% - 80px)*0.33333)",
