@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Flaffy!"
-location: Montenegto
+location: Montenegro
 month: July 2025
 hero:
   url: Bagel/montenegro-25-07.jpg
