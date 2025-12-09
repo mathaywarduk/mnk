@@ -11,7 +11,9 @@ featured: true
 
 After months of regularly searching for somewhere we wanted to call home and having some viewings of a handful of houses, we stopped looking every day.
 
-Then we found it.
+Then we found it. Booked a viewing, drove up to Scotland on Friday, spent 30 minutes looking at the house before driving to York for Simon's birthday meal.
+
+Sounds rushed, but we'd decided we wanted it as soon as we walked in.
 
 
 {% include gallery.html id="the-house" %}
