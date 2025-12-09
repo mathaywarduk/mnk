@@ -2,7 +2,7 @@
 
   {% include image.html url=include.placeholder alt=include.alt block_classes="relative z-20" classes="w-auto h-full" %}
 
-  <video class="{{ include.classes }}" preload="none" loop muted playsinline class="absolute inset-0 z-10">
+  <video preload="none" loop muted playsinline class="absolute inset-0 z-10 {{ include.classes }}">
     <source src="{{ site.video_base }}{{ include.url | replace: 'mp4', 'webm' }}" type="video/webm" />
     <source src="{{ site.video_base }}{{ include.url }}" type="video/mp4" />
   </video>
