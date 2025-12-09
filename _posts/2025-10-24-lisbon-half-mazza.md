@@ -14,5 +14,4 @@ Turns out it was just what we needed. A laugh with friends and Kerry smashed the
 
 Unrelated... white girls can't scoot.
 
-
 {% include gallery.html id="lisbon-mazza" %}
