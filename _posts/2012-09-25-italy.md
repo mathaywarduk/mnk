@@ -9,3 +9,5 @@ hero:
 featured: true
 ---
 
+Coming soon.
+

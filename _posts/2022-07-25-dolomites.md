@@ -1,5 +1,6 @@
 ---
 layout: post
+
 title:  "Do-Lo-Mi-Tee"
 location: Italy
 month: July 2022
@@ -8,4 +9,6 @@ hero:
   alt: Kerry on Monte Pez
 featured: true
 ---
+
+Coming soon.
 

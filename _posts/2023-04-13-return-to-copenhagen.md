@@ -1,5 +1,6 @@
 ---
 layout: post
+
 title:  "Return to Copenhagen"
 location: Denmark
 month: April 2023
@@ -8,3 +9,5 @@ hero:
   alt: ""
 featured: true
 ---
+
+Coming soon.

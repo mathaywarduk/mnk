@@ -1,5 +1,6 @@
 ---
 layout: post
+
 title:  "Three wedding trips"
 location: Europe
 month: August 2016
@@ -8,4 +9,6 @@ hero:
   alt: Mat, Wayne and Dave in Greece
 featured: true
 ---
+
+Coming soon.
 

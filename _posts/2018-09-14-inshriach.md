@@ -1,5 +1,6 @@
 ---
 layout: post
+
 title:  "Inshriach and the Lakes"
 location: Scotland
 month: September 2018
@@ -8,4 +9,6 @@ hero:
   alt: Kerry and Rudi at Inshriach
 featured: true
 ---
+
+Coming soon.
 

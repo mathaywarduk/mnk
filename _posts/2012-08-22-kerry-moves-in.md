@@ -8,3 +8,5 @@ hero:
   alt: Kerry cooking
 ---
 
+Coming soon.
+

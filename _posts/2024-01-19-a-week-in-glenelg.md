@@ -5,5 +5,5 @@ location: Scotland
 month: January 2024
 hero:
   url: Glenelg-001.jpg
-  alt: ""
+  alt: "Kerry swimming in the sea at Glenelg"
 ---

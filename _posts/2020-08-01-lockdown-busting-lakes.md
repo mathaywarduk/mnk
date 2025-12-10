@@ -1,5 +1,6 @@
 ---
 layout: post
+
 title:  "Lockdown busting Lakes"
 location: England
 month: August 2020
@@ -7,6 +8,8 @@ hero:
   url: Lakes-002.jpg
   alt: "Kerry and Rudi on Stac Pollaidh"
 ---
+
+Coming soon.
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar sem tristique nibh viverra sodales. Quisque rutrum consequat odio, et sagittis nisi ullamcorper sed.

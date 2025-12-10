@@ -1,5 +1,6 @@
 ---
 layout: post
+
 title:  "Sunsets and Private Coves"
 location: Scotland
 month: September 2020
@@ -9,7 +10,9 @@ hero:
 featured: true
 ---
 
+Coming soon.
 
+<!-- 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar sem tristique nibh viverra sodales. Quisque rutrum consequat odio, et sagittis nisi ullamcorper sed.
 
 Morbi et velit ac odio accumsan posuere eu a mi. Nullam ac fringilla odio.
@@ -32,3 +35,4 @@ Mauris ultricies hendrerit lorem, nec molestie nisi malesuada ultricies. Nam dic
 Mauris ultricies hendrerit lorem, nec molestie nisi malesuada ultricies. Nam dictum, lorem at tempus ultrices, felis nulla rutrum enim, at tristique urna justo at velit. Nullam venenatis tempus justo, sit amet lobortis ipsum venenatis nec. Aenean dignissim quam justo.
 
 {% include image.html url="Highlands-005.jpg" alt="Sarah, Kerry and the dogs on Ben A'an summit" block_classes="w-auto h-auto block drop-shadow-base content-bleed-right" classes="w-full my-12 lg:my-24" width=900 height=600 %}
+ -->

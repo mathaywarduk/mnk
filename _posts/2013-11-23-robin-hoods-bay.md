@@ -8,3 +8,5 @@ hero:
   alt: Kerry in the pub at Robin Hood's Bay
 ---
 
+Coming soon.
+

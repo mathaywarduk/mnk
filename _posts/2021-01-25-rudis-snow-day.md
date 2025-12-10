@@ -1,5 +1,6 @@
 ---
 layout: post
+
 title:  "Rudi's snow day"
 location: England
 month: January 2021
@@ -7,6 +8,8 @@ hero:
   url: Rudi-Snow-001.jpg
   alt: "Rudi in the snow!"
 ---
+
+Coming soon.
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar sem tristique nibh viverra sodales. Quisque rutrum consequat odio, et sagittis nisi ullamcorper sed.
