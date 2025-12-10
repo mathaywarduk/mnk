@@ -451,7 +451,7 @@ glenelg:
     alt: "View from the beer garden"
   - url: "Bagel/glenelg-06.jpg"
     alt: "View from the beer garden"
-  - url: "Bagel/glenelg-012.jpg"
+  - url: "Bagel/glenelg-012.mp4"
     placeholder: "Bagel/glenelg-012.png"
     alt: "View from the beer garden"
     type: video
@@ -652,3 +652,42 @@ scotland-apr24-glenelg:
     placeholder: "Bagel/scotland-apr24-033.png"
     alt: "Kerry swimming in the river at Moyle campsite"
     type: video
+glenelg-24:
+  - url: "Bagel/glenelg-24-03.jpg"
+    alt: "Rudi looking out the window"
+  - url: "Bagel/glenelg-24-04.jpg"
+    alt: "The view from our cottage"
+  - url: "Bagel/glenelg-24-08.jpg"
+    alt: "Snow-capped mountains on Skye"
+
+  - url: "Bagel/glenelg-24-06.jpg"
+    alt: "The road and the pier"
+  - url: "Bagel/glenelg-24-07.jpg"
+    alt: "Kerry walking to swim in the sea"
+  - url: "Bagel/glenelg-24-014.mp4"
+    placeholder: "Bagel/glenelg-24-014.png"
+    alt: "Kerry swimming in Glenelg"
+    type: video
+
+  - url: "Bagel/glenelg-24-05.jpg"
+    alt: "Kerry on Glenelg Beach"
+  - url: "Bagel/glenelg-24-013.mp4"
+    placeholder: "Bagel/glenelg-24-013.png"
+    alt: "Rudi on Glenelg beach"
+    type: video
+
+
+  # - url: "Bagel/glenelg-24-09.jpg"
+  #   alt: "Kerry and Rudi on Glenelg Beach"
+  - url: "Bagel/glenelg-24-010.jpg"
+    alt: "Kerry and Rudi on Glenelg Beach"
+  - url: "Bagel/glenelg-24-011.jpg"
+    alt: "Rudi and Vanessa"
+  # - url: "Bagel/glenelg-24-012.mp4"
+  #   placeholder: "Bagel/glenelg-24-012.png"
+  #   alt: "Kerry swimming in Glenelg"
+  #   type: video
+  # - url: "Bagel/glenelg-24-01.jpg"
+  #   alt: "Sandaig"
+  # - url: "Bagel/glenelg-24-02.jpg"
+  #   alt: "Kerry and Rudi in the Glenelg Inn"
