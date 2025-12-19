@@ -17,11 +17,11 @@ We drove up on the Friday evening, arriving at Three Forest Lochs Drive at about
 
 ## Lochinver & Quinag
 
-Next day, our first proper stop, in Lochinver. We had booked a cabin that had hot tub views of Suilven and had dinner at Delilah's. last time we visited was during Covid, so we couldn't go inside, so it was nice to be warm.
+Next day, our first proper stop, in Lochinver. We had booked a cabin that had hot tub views of Suilven and had dinner at Delilah's. The last time we visited was during Covid, so we couldn't go inside, so it was nice to be warm this time around.
 
 Sunday was Mat's actual birthday and he wanted to climb the three peaks of Quinag. We set off just after 7am and started the walk soon after.
 
-Two peaks in, the wind started picking up an annoying the hell out of us, but we persevered, even when the windy pushed us around. We were 100m or so from the top of the third peak when the hail started and the visibility dropped. After sheltering behind a rock for 5 minutes, we decided to call it a day. The right decision.
+Two peaks in, the wind started picking up and annoying the hell out of us, but we persevered, even when the wind pushed us around. We were 100m or so from the top of the third peak when the hail started and the visibility dropped. After sheltering behind a rock for 5 minutes, we decided to call it a day. The right decision.
 
 {% include gallery.html id="scotland-apr24-lochinver" %}
 

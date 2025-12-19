@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Rudi's uses his passport"
+title:  "Rudi uses his passport"
 location: Switzerland
 month: June 2024
 hero:
@@ -9,9 +9,9 @@ hero:
 featured: true
 ---
 
-Last year we'd decided not to travel to Switzerland as it was just too much hassle to get Rudi's health certificate, but this year we made it work.
+Last year we'd decided not to travel to Switzerland as it was just too much hassle to get Rudi's health certificate at short notice, but this year we made it work.
 
-We drove down to Folkestone and took the Shuttle over to France for a night before making our way over to Switzerland and into the mountains as soon as we could.
+We drove down to Folkestone and took Le Shuttle over to France for a night before making our way to Switzerland and into the mountains as soon as we could.
 
 Our first two nights in Switzerland, we stayed at Camping Rutti, where we explored the hills behind and met the local cows.
 
@@ -19,11 +19,11 @@ Our first two nights in Switzerland, we stayed at Camping Rutti, where we explor
 
 ## Eiger view
 
-Lauterbrunnen, the nearest town to Camping Rutti was a tourist trap and Kerry took pleasure in honking the horn at a selfie taker. Jsut down the road and a little less budy was Grindlewald, where we stayed next at the Eiger View Alpine Lodge. It's name was spot on.
+Lauterbrunnen, the nearest town to Camping Rutti was a tourist trap and Kerry took pleasure in honking the horn at a selfie taker. Just down the road and a little less budy was Grindelwald, where we stayed next at the Eiger View Alpine Lodge. It's name was spot on.
 
 From there, we took the cable car up to go for a walk. Great views on the way up, but when we got there the trail was closed. So, instead we drove over to Kanderstag and walked up to Oeschinensee.
 
-{% include gallery.html id="switzerland-grindlewald" %}
+{% include gallery.html id="switzerland-grindelwald" %}
 
 ## Memorable drive to Camping Viva
 
@@ -60,7 +60,7 @@ From the second, we walked up the hill to Lac Blu, avoiding the electric fences 
 
 Finally we pushed the boat out and booked a stay at Cervo, a spa hotel in Zermatt.
 
-The place smelt incredible (Mat is still searching for the same scent) and it had great views of the Matterhorn.
+The place smelt incredible (Mat is still searching for the same scent), it had great views of the Matterhorn and an incredible secret breakfast room.
 
 We took the furnicular up to Sunegga, walked around (some of) the five lakes and down to Chez Vrony for a bougie lunch with a view.
 
