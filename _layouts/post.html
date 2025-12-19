@@ -39,19 +39,20 @@ layout: default
 
 <div class="py-8 border-t border-t pt-8 b-green c-buff fixed bottom-0 w-full z-0">
   <ul class="container flex flex-col md:flex-row justify-between">
-    {% if page.previous.url %}
-      <li class="w-full {% if page.next.url %} md:w-auto {% endif %} px-1 pb-4 md:pb-0 flex flex-col items-start">
-        <span class="uppercase tracking-wide lg:text-xs">Previous</span>
-
-        <a class="font-display text-md link" href="{{ page.previous.url }}">{{ page.previous.title }}</a>
-      </li>
-    {% endif %}
 
     {% if page.next.url %}
-      <li class="w-full {% if page.previous.url %} md:w-auto {% endif %} px-1 text-right flex flex-col items-end">
+      <li class="px-1 flex flex-col items-start">
         <span class="uppercase tracking-wide lg:text-xs">Next</span>
 
         <a class="font-display text-lg link" href="{{ page.next.url }}">{{ page.next.title }}</a>
+      </li>
+    {% endif %}
+
+    {% if page.previous.url %}
+      <li class="md:ml-auto px-1 text-right pb-4 md:pb-0 flex flex-col items-end">
+        <span class="uppercase tracking-wide lg:text-xs">Previous</span>
+
+        <a class="font-display text-md link" href="{{ page.previous.url }}">{{ page.previous.title }}</a>
       </li>
     {% endif %}
   </ul>
