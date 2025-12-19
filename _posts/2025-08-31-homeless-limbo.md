@@ -9,27 +9,26 @@ hero:
 featured: true
 ---
 
-For most of August, we emptied Frog Cottage and filled up the storage container.
+For most of August, we emptied Frog Cottage and filled the storage container.
 
-On moving day, we took the last bits, locked up Frog Cottage, had a little cry, and handed the keys to the estate agents.
+On moving day we took the last bits, locked up, had a little cry and handed the keys back.
 
-That night we went for a birthday meal for Mama H and set off for Scotland the next day.
+That evening we went out for Mama H’s birthday and headed to Scotland the next day.
 
 {% include gallery.html id="moving" %}
 
-We started with a sunday lunch in Pitlochry and then our first cottage was on Loch Rannoch. Rudi loved being near the water for lunch breaks.
-
+We started with Sunday lunch in Pitlochry before heading to our first cottage on Loch Rannoch. Rudi loved being close to the water during lunch breaks.
 
 {% include gallery.html id="rannoch" %}
 
-Next, we moved on to Glenelg. The Airbnb wasn't as great as it could have been, but we really enjoyed visiting the pub and reconnecting with the locals we'd met last January.
+Next was Glenelg. The Airbnb was not perfect, but the pub made up for it and it was good to reconnect with locals we had met the previous January.
 
-We got to see Rudi on our favourite beach again and woke up to incredible weather on our last day.
+Rudi got back to his favourite beach and we woke to incredible weather on our last day.
 
 {% include gallery.html id="glenelg" %}
 
-From Glenelg, we went to Ormiscaig. A beautiful house with horses roaming around outside and otters in the water. Bit scary in the wind though...
+From there we moved on to Ormiscaig. A beautiful house, horses roaming outside and otters in the water. A little intimidating when the wind picked up.
 
 {% include gallery.html id="ormiscaig" %}
 
-Three weeks of holiday cottages sounds great, and they all had their good points, but we were ready for a break and a place to call home by this point.
+Three weeks of holiday cottages sounds dreamy. They all had their moments, but by the end we were ready for somewhere that felt like home.

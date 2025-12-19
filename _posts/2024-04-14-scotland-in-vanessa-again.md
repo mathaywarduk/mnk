@@ -11,17 +11,17 @@ featured: true
 
 It was Mat's birthday, so we planned a trip to Scotland, mostly in the North West.
 
-We drove up on the Friday evening, arriving at Three Forest Lochs Drive at about midnight.
+We drove up on the Friday evening, arriving at Three Lochs Forest Drive at about midnight.
 
 {% include gallery.html id="scotland-apr24-start" %}
 
 ## Lochinver & Quinag
 
-Next day, our first proper stop, in Lochinver. We had booked a cabin that had hot tub views of Suilven and had dinner at Delilah's. The last time we visited was during Covid, so we couldn't go inside, so it was nice to be warm this time around.
+Our first proper stop was Lochinver. We’d booked a cabin with hot tub views of Suilven and had dinner at Delilah’s. Last time we visited was during Covid, so it was nice to actually be inside and warm.
 
-Sunday was Mat's actual birthday and he wanted to climb the three peaks of Quinag. We set off just after 7am and started the walk soon after.
+Sunday was Mat's birthday and he wanted to climb the three peaks of Quinag. We set off just after 7am and started the walk soon after.
 
-Two peaks in, the wind started picking up and annoying the hell out of us, but we persevered, even when the wind pushed us around. We were 100m or so from the top of the third peak when the hail started and the visibility dropped. After sheltering behind a rock for 5 minutes, we decided to call it a day. The right decision.
+Two peaks in, the wind started picking up and annoying the hell out of us, but we persevered, even when the wind pushed us around. We were 100m or so from final summit when the hail started and the visibility dropped. After sheltering behind a rock for 5 minutes, we decided to call it a day. The right decision.
 
 {% include gallery.html id="scotland-apr24-lochinver" %}
 

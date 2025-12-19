@@ -8,8 +8,8 @@ hero:
   alt: The kitchen at Frog Lane
 ---
 
-After month's of hard work, decorating, fixing, cleaning and 'staging' for viewings, someone fell in love with our beautiful home on Frog Lane.
+After months of decorating, fixing, cleaning and 'staging' for viewings, someone fell in love with our beautiful home on Frog Lane.
 
 {% include gallery.html id="frog-lane" %}
 
-The move to Scotland is on!
+The move to Scotland was officially on!

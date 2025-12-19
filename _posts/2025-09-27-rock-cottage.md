@@ -9,16 +9,19 @@ hero:
 featured: true
 ---
 
-Our temporary home. Rock Cottage has a special place in our heart.
+Our temporary home. Rock Cottage will always have a special place in our hearts.
 
-We were blessed with great weather for most of our 3&frac12; weeks in Fearnan, including a beautiful sunset at the top of Loch Tay.
+We were lucky with the weather during our three and a half weeks in Fearnan, including a beautiful sunset at the top of Loch Tay.
 
-Rudi loved the garden sniffs and Kerry enjoyed the proximity to a wild swim.
+Rudi loved the garden sniffs and Kerry loved how close the loch was.
 
 {% include gallery.html id="rock-cottage" %}
 
 ## Weekends are back
 
-The weekends were finally ours again. No more travelling. So we tried out folk night at the Ewe, met the Polish Mr. Bean, went for a hike up a couple of local munros and had the chance to drive to Strathyre at the weekend and check out the Loch.
+Weekends finally felt like weekends again. No more travelling.
+
+We tried folk night at the Ewe, met the Polish Mr Bean, climbed local munros and drove to Strathyre to spend time by our new loch.
 
 {% include gallery.html id="west-lawers" %}
+

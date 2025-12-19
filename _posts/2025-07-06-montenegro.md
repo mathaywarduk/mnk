@@ -8,8 +8,8 @@ hero:
   alt: Kerry and Flaffy
 ---
 
-After all the house stuff, we really needed a break. We booked 4 nights in Montenegro, taking us back 10 years to one of our first holidays.
+After everything house related, we really needed a break. We booked four nights in Montenegro, returning to one of our very first holiday spots from ten years earlier.
 
-This time it was a lot busier than 2015, and a lot warmer too! But we drank wine, played silly buggers in the sea and met Flaffy (our holiday dog and Rudi lookalike). ❤️
+It was busier than 2015 and much warmer, but we drank wine, played silly buggers in the sea and met Flaffy. Our holiday dog and Rudi lookalike. ❤️
 
 {% include gallery.html id="montenegro-25" %}

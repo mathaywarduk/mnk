@@ -8,8 +8,8 @@ hero:
   alt: "Kerry, Rudi and Mat on Beinn Each"
 ---
 
-Almost exactly 3 years to the day since our wild camp on Beinn Each, we climbed it again.
+Almost exactly three years to the day since our wild camp on Beinn Each, we climbed it again.
 
-We wanted to get out into the Scottish hills, so drove 8 hours on the Friday evening, camped in the van overnight and then went for a jaunt up one of our favourites.
+We wanted to get back into the Scottish hills, so we drove eight hours on Friday evening, camped in the van overnight and then went for a wander up one of our favourites.
 
 {% include gallery.html id="beinn-each-again" %}

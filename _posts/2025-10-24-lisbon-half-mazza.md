@@ -8,9 +8,9 @@ hero:
   alt: Kerry running the Lisbon Half Marathon
 ---
 
-Kerry had booked with Sarah to do the Lisbon Half Marathon. At the time we had no idea it'd be days before we moved in to our new house, so we were a bit weary by the time we got to the airport.
+Kerry had booked the Lisbon Half Marathon with Sarah long before we realised it would be just days before moving to Scotland.
 
-Turns out it was just what we needed. A laugh with friends and Kerry smashed the race.
+By the time we reached the airport we were tired, but it turned out to be exactly what we needed. Friends, laughter and Kerry smashing the race.
 
 Unrelated... white girls can't scoot.
 

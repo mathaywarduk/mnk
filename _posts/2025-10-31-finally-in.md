@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Finally, we're in"
+title:  "Finally, we're home"
 location: Scotland
 month: October 2025
 hero:
@@ -9,16 +9,18 @@ hero:
 featured: true
 ---
 
-After 2 months of living all over the place, we finally got to the day, oaded up the big van and set off with our parents to get the keys.
+After two months of living *everywhere*, we loaded up the van, brought our parents along and went to get the keys.
 
-The weather when we got there was atrocious, but we were happy to be in.
+The weather was atrocious, but it didn't matter. We were in.
 
 {% include gallery.html id="craig-rowan" %}
 
-When the parents left, we had time to explore. Went for walks in the Strathyre Forest, visited the pub (a few times!) climbed the local mountain and walked to Mhor84 for Sunday lunch.
+Once the parents left, we explored. Walks in Strathyre forest, the pub (more than once!), climbing the local ben and Sunday lunch at Mhor84.
 
 {% include gallery.html id="craig-rowan-walks" %}
 
-Then a few weeks later, we did it all again. Driving all the way back to Bottesford to collect our things was heavy, but it's great to be 100% living in Scotland.
+A few weeks later we did it all again. Driving back to Bottesford to collect the rest of our things was heavy, but being 100% in Scotland made was worth it.
 
 {% include gallery.html id="moving" %}
+
+Finally home.
