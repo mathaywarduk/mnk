@@ -2595,8 +2595,8 @@ p {
   .md\:-mb-\[10px\] {
     margin-bottom: -10px;
   }
-  .md\:w-auto {
-    width: auto;
+  .md\:ml-auto {
+    margin-left: auto;
   }
   .md\:flex-row {
     flex-direction: row;
