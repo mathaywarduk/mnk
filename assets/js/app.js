@@ -120,6 +120,7 @@ function Gallery(el) {
 
 // *** AUTOPLAY VIDEO *** //
 
+// UPDATED: true if >= 50% of width AND >= 50% of height is visible
 function isInViewport(el) {
 
   const rect = el.getBoundingClientRect();
@@ -134,54 +135,102 @@ function isInViewport(el) {
   const elementWidth = rect.width || el.offsetWidth;
   const elementHeight = rect.height || el.offsetHeight;
 
-  return (
-    visibleWidth >= elementWidth / 2 &&
-    visibleHeight >= elementHeight / 2
-  );
+  return visibleWidth >= elementWidth / 1.5 && visibleHeight >= elementHeight / 1.5;
+
 }
 
-function playPause(video, hidePlaceholderOnPause) {
-  const container = video.closest('[data-video]');
-  const placeholder = container.querySelector('picture');
+// NEW (minimal): swap z-index classes exactly as you described (z-0 / z-20)
+function showVideo(container) {
+  const placeholder = container.querySelector("picture");
+  const video = container.querySelector("video");
 
-  const isVisible =
-    isInViewport(container) &&
-    container.classList.contains('is-active');
+  if (placeholder) {
+    placeholder.classList.remove("z-20");
+    placeholder.classList.add("z-0");
+  }
 
-  if (isVisible) {
-    if (placeholder) {
-      placeholder.classList.remove('z-20');
-      placeholder.classList.add('z-0');
-    }
+  if (video) {
+    video.classList.remove("z-0");
+    video.classList.add("z-20");
+  }
+}
+
+function showPlaceholder(container) {
+  const placeholder = container.querySelector("picture");
+  const video = container.querySelector("video");
+
+  if (placeholder) {
+    placeholder.classList.remove("z-0");
+    placeholder.classList.add("z-20");
+  }
+
+  if (video) {
+    video.classList.remove("z-20");
+    video.classList.add("z-0");
+  }
+}
+
+// UPDATED:
+// - check viewport visibility on [data-video] container (not the video element)
+// - ignore .is-active if the gallery is horizontally scrollable (mobile overflow-x use-case)
+// - preserve z-index swapping via z-0 / z-20 classes
+// - reset when leaving viewport (pause + currentTime = 0)
+function playPause(video) {
+
+  const container = video.closest("[data-video]") || video.parentNode;
+  const inView = isInViewport(container);
+
+  const gallery = container.closest("[data-gallery]");
+  const isScrollableGallery = !!(gallery && gallery.scrollWidth > gallery.clientWidth);
+
+  const isActive = container.classList.contains('is-active');
+  const activeOk = isScrollableGallery ? true : isActive;
+
+  if (inView && activeOk) {
+    showVideo(container);
     video.play();
   } else {
     video.pause();
-    if (placeholder && hidePlaceholderOnPause) {
-      placeholder.classList.remove('z-0');
-      placeholder.classList.add('z-20');
-      video.currentTime = 0;
-    }
+    try { video.currentTime = 0; } catch (e) {}
+    showPlaceholder(container);
   }
 }
 
 function playPauseAllVideos() {
   document.querySelectorAll("video").forEach((element) => {
-    playPause(element, true);
+    playPause(element);
   });
 }
 
 function Video(el) {
 
   const video = el.querySelector("video");
-  playPause(video, false);
+  playPause(video);
 
+  // UPDATED: scrollend is patchy; keep it but also listen for scroll
   window.addEventListener("scrollend", function() {
-    playPause(video, false);
+    playPause(video);
   });
 
-  window.addEventListener("resize",debounce(function(e){
-    playPause(video, false);
+  window.addEventListener("scroll", debounce(function(e){
+    playPause(video);
   }));
+
+  window.addEventListener("resize", debounce(function(e){
+    playPause(video);
+  }));
+
+  // UPDATED: horizontal overflow scrolling on mobile happens on the gallery element
+  const gallery = el.closest("[data-gallery]");
+  if (gallery) {
+    gallery.addEventListener("scroll", debounce(function() {
+      playPause(video);
+    }));
+
+    gallery.addEventListener("scrollend", function() {
+      playPause(video);
+    });
+  }
 
 }
 

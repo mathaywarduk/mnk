@@ -1267,6 +1267,10 @@ video {
   height: 100%;
 }
 
+.max-h-\[75vh\] {
+  max-height: 75vh;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -2051,19 +2055,19 @@ video {
 }
 
 .text-2xl {
-  font-size: clamp(2.96rem, 2.205rem + 3.7751vi, 5.1307rem);
+  font-size: clamp(3.552rem, 3.0029rem + 2.7455vw, 5.1307rem);
 }
 
 .text-lg {
-  font-size: clamp(1.6658rem, 1.2409rem + 2.1245vi, 2.8874rem);
+  font-size: clamp(1.999rem, 1.69rem + 1.5451vw, 2.8874rem);
 }
 
 .text-md {
-  font-size: clamp(1.2497rem, 0.9309rem + 1.5938vi, 2.1661rem);
+  font-size: clamp(1.4996rem, 1.2678rem + 1.1591vw, 2.1661rem);
 }
 
 .text-sm {
-  font-size: clamp(0.7033rem, 0.5239rem + 0.897vi, 1.2191rem);
+  font-size: clamp(0.844rem, 0.7135rem + 0.6523vw, 1.2191rem);
 }
 
 .text-zero {
@@ -2223,7 +2227,7 @@ video {
 a.link {
   display: inline;
   font-family: elido, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: clamp(1.2497rem, 0.9309rem + 1.5938vi, 2.1661rem);
+  font-size: clamp(1.4996rem, 1.2678rem + 1.1591vw, 2.1661rem);
   text-decoration-line: none;
   transition-property: all;
   transition-duration: 1000ms;
@@ -2255,7 +2259,7 @@ a.link:focus {
 
 body {
   font-family: elido, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: clamp(0.9375rem, 0.6984rem + 1.1957vi, 1.625rem);
+  font-size: clamp(1.125rem, 0.9511rem + 0.8696vw, 1.625rem);
   background-color: var(--buff-light);
   color: var(--grey-dark);
 }
@@ -2264,7 +2268,7 @@ h1,
 .h1 {
   margin-bottom: 0.25rem;
   font-family: marlide-display-variable, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: clamp(2.96rem, 2.205rem + 3.7751vi, 5.1307rem);
+  font-size: clamp(3.552rem, 3.0029rem + 2.7455vw, 5.1307rem);
   line-height: 1;
 }
 
@@ -2276,21 +2280,21 @@ h4 .h1 {
 @media (min-width: 768px) {
   h1,
   .h1 {
-    font-size: clamp(3.9457rem, 2.9392rem + 5.0322vi, 6.8392rem);
+    font-size: clamp(4.7348rem, 4.0029rem + 3.6598vw, 6.8392rem);
   }
 }
 @media (min-width: 1024px) {
   h1,
   .h1 {
     margin-bottom: 0.75rem;
-    font-size: clamp(5.2596rem, 3.918rem + 6.7079vi, 9.1166rem);
+    font-size: clamp(6.3115rem, 5.3358rem + 4.8785vw, 9.1166rem);
   }
 }
 h2,
 .h2 {
   margin-bottom: 1rem;
   font-family: marlide-display-variable, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: clamp(1.6658rem, 1.2409rem + 2.1245vi, 2.8874rem);
+  font-size: clamp(1.999rem, 1.69rem + 1.5451vw, 2.8874rem);
   line-height: 1;
 }
 
@@ -2303,14 +2307,14 @@ h4 .h2 {
   h2,
   .h2 {
     margin-bottom: 2rem;
-    font-size: clamp(2.2206rem, 1.6542rem + 2.832vi, 3.849rem);
+    font-size: clamp(2.6647rem, 2.2527rem + 2.0596vw, 3.849rem);
   }
 }
 h3,
 .h3 {
   margin-bottom: 1rem;
   font-family: marlide-display-variable, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: clamp(1.2497rem, 0.9309rem + 1.5938vi, 2.1661rem);
+  font-size: clamp(1.4996rem, 1.2678rem + 1.1591vw, 2.1661rem);
   line-height: 1;
 }
 
@@ -2323,14 +2327,14 @@ h4 .h3 {
   h3,
   .h3 {
     margin-bottom: 2rem;
-    font-size: clamp(1.6658rem, 1.2409rem + 2.1245vi, 2.8874rem);
+    font-size: clamp(1.999rem, 1.69rem + 1.5451vw, 2.8874rem);
   }
 }
 h4,
 .h4 {
   margin-bottom: 1rem;
   font-family: marlide-display-variable, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: clamp(0.9375rem, 0.6984rem + 1.1957vi, 1.625rem);
+  font-size: clamp(1.125rem, 0.9511rem + 0.8696vw, 1.625rem);
   line-height: 1;
 }
 
@@ -2343,7 +2347,7 @@ h4 .h4 {
   h4,
   .h4 {
     margin-bottom: 2rem;
-    font-size: clamp(1.2497rem, 0.9309rem + 1.5938vi, 2.1661rem);
+    font-size: clamp(1.4996rem, 1.2678rem + 1.1591vw, 2.1661rem);
   }
 }
 h1, h2, h3, h4 .font-serif {
@@ -2366,7 +2370,7 @@ p + h4 {
 p {
   margin-bottom: 1rem;
   font-family: elido, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: clamp(0.9375rem, 0.6984rem + 1.1957vi, 1.625rem);
+  font-size: clamp(1.125rem, 0.9511rem + 0.8696vw, 1.625rem);
   line-height: 1.25;
 }
 
@@ -2542,7 +2546,7 @@ p {
 }
 
 .group:hover .group-hover\:text-sm {
-  font-size: clamp(0.7033rem, 0.5239rem + 0.897vi, 1.2191rem);
+  font-size: clamp(0.844rem, 0.7135rem + 0.6523vw, 1.2191rem);
 }
 
 .group:hover .group-hover\:opacity-0 {
@@ -2581,7 +2585,7 @@ p {
 }
 
 .group:focus .group-focus\:text-sm {
-  font-size: clamp(0.7033rem, 0.5239rem + 0.897vi, 1.2191rem);
+  font-size: clamp(0.844rem, 0.7135rem + 0.6523vw, 1.2191rem);
 }
 
 .group:focus .group-focus\:opacity-100 {
@@ -2712,6 +2716,9 @@ p {
   .lg\:h-screen {
     height: 100vh;
   }
+  .lg\:max-h-none {
+    max-height: none;
+  }
   .lg\:min-h-screen {
     min-height: 100vh;
   }
@@ -2824,16 +2831,16 @@ p {
     text-align: center;
   }
   .lg\:text-base {
-    font-size: clamp(0.9375rem, 0.6984rem + 1.1957vi, 1.625rem);
+    font-size: clamp(1.125rem, 0.9511rem + 0.8696vw, 1.625rem);
   }
   .lg\:text-lg {
-    font-size: clamp(1.6658rem, 1.2409rem + 2.1245vi, 2.8874rem);
+    font-size: clamp(1.999rem, 1.69rem + 1.5451vw, 2.8874rem);
   }
   .lg\:text-sm {
-    font-size: clamp(0.7033rem, 0.5239rem + 0.897vi, 1.2191rem);
+    font-size: clamp(0.844rem, 0.7135rem + 0.6523vw, 1.2191rem);
   }
   .lg\:text-xs {
-    font-size: clamp(0.5276rem, 0.393rem + 0.6729vi, 0.9145rem);
+    font-size: clamp(0.6331rem, 0.5353rem + 0.4894vw, 0.9145rem);
   }
   .lg\:opacity-0 {
     opacity: 0;
