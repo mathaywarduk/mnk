@@ -14,36 +14,30 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      /* @link https://utopia.fyi/type/calculator?c=320,15,1.333,1240,26,1.333,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+      /* @link https://utopia.fyi/type/calculator?c=320,18,1.333,1240,26,1.333,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
       "zero": "0px",
  
-      /* Step -2: 8.4417px → 14.6323px */
-      xs: "clamp(0.5276rem, 0.393rem + 0.6729vi, 0.9145rem)",
 
-      /* Step -1: 11.2528px → 19.5049px */
-      sm: "clamp(0.7033rem, 0.5239rem + 0.897vi, 1.2191rem)",
+      /* Step -2: 10.1301px → 14.6323px */
+      xs: "clamp(0.6331rem, 0.5353rem + 0.4894vw, 0.9145rem)",
+      /* Step -1: 13.5034px → 19.5049px */
+      sm: "clamp(0.844rem, 0.7135rem + 0.6523vw, 1.2191rem)",
+      /* Step 0: 18px → 26px */
+      base: "clamp(1.125rem, 0.9511rem + 0.8696vw, 1.625rem)",
+      /* Step 1: 23.994px → 34.658px */
+      md: "clamp(1.4996rem, 1.2678rem + 1.1591vw, 2.1661rem)",
+      /* Step 2: 31.984px → 46.1991px */
+      lg: "clamp(1.999rem, 1.69rem + 1.5451vw, 2.8874rem)",
+      /* Step 3: 42.6347px → 61.5834px */
+      xl: "clamp(2.6647rem, 2.2527rem + 2.0596vw, 3.849rem)",
+      /* Step 4: 56.832px → 82.0907px */
+      "2xl": "clamp(3.552rem, 3.0029rem + 2.7455vw, 5.1307rem)",
+      /* Step 5: 75.7571px → 109.4269px */
+      "3xl": "clamp(4.7348rem, 4.0029rem + 3.6598vw, 6.8392rem)",
+      /* Step 6: 100.9842px → 145.8661px */
+      "4xl": "clamp(6.3115rem, 5.3358rem + 4.8785vw, 9.1166rem)",
 
-      /* Step 0: 15px → 26px */
-      base: "clamp(0.9375rem, 0.6984rem + 1.1957vi, 1.625rem)",
-
-      /* Step 1: 19.995px → 34.658px */
-      md: "clamp(1.2497rem, 0.9309rem + 1.5938vi, 2.1661rem)",
-
-      /* Step 2: 26.6533px → 46.1991px */
-      lg: "clamp(1.6658rem, 1.2409rem + 2.1245vi, 2.8874rem)",
-
-      /* Step 3: 35.5289px → 61.5834px */
-      xl: "clamp(2.2206rem, 1.6542rem + 2.832vi, 3.849rem)",
-
-      /* Step 4: 47.36px → 82.0907px */
-      "2xl": "clamp(2.96rem, 2.205rem + 3.7751vi, 5.1307rem)",
-
-      /* Step 5: 63.1309px → 109.4269px */
-      "3xl": "clamp(3.9457rem, 2.9392rem + 5.0322vi, 6.8392rem)",
-
-      /* Step 6: 84.1535px → 145.8661px */
-      "4xl": "clamp(5.2596rem, 3.918rem + 6.7079vi, 9.1166rem)",
 
     },
     extend: {
