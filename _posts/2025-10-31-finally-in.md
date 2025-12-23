@@ -21,6 +21,6 @@ Once the parents left, we explored. Walks in Strathyre forest, the pub (more tha
 
 A few weeks later we did it all again. Driving back to Bottesford to collect the rest of our things was heavy, but being 100% in Scotland made was worth it.
 
-{% include gallery.html id="moving" %}
+{% include gallery.html id="moving-2" %}
 
 Finally home.

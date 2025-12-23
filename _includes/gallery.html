@@ -10,7 +10,7 @@
       {% elsif item.type == "video" %}
         {% include video.html url=item.url url=item.url placeholder=item.placeholder alt=item.alt block_classes="max-w-screen w-auto h-[75vh] lg:h-[95vh] drop-shadow-base shrink-0 snap-start" classes="w-full h-full" %}
       {% else %}
-        {% include image.html url=item.url alt=item.alt block_classes="w-auto h-[75vh] lg:h-[95vh] drop-shadow-base shrink-0 snap-start" classes="w-full h-full" %}
+        {% include image.html url=item.url alt=item.alt block_classes="w-auto h-[75vh] lg:h-[95vh] drop-shadow-base shrink-0 snap-start" classes="w-full h-full"%}
       {% endif %}
     {% endfor %}
 
