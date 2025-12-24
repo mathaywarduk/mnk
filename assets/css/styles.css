@@ -1315,6 +1315,10 @@ video {
   max-width: 65ch;
 }
 
+.max-w-none {
+  max-width: none;
+}
+
 .shrink-0 {
   flex-shrink: 0;
 }
