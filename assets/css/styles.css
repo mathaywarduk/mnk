@@ -1267,10 +1267,6 @@ video {
   height: 100%;
 }
 
-.max-h-\[75vh\] {
-  max-height: 75vh;
-}
-
 .w-0 {
   width: 0px;
 }
@@ -1311,12 +1307,12 @@ video {
   max-width: 66.6666666%;
 }
 
-.max-w-prose {
-  max-width: 65ch;
-}
-
 .max-w-none {
   max-width: none;
+}
+
+.max-w-prose {
+  max-width: 65ch;
 }
 
 .shrink-0 {
@@ -1344,10 +1340,6 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.snap-x {
-  scroll-snap-type: x var(--tw-scroll-snap-strictness);
 }
 
 .snap-y {
@@ -1962,16 +1954,8 @@ video {
   gap: 0.75rem;
 }
 
-.gap-6 {
-  gap: 1.5rem;
-}
-
 .gap-8 {
   gap: 2rem;
-}
-
-.overflow-auto {
-  overflow: auto;
 }
 
 .overflow-hidden {
@@ -2714,14 +2698,8 @@ p {
   .lg\:h-\[110vh\] {
     height: 110vh;
   }
-  .lg\:h-\[95vh\] {
-    height: 95vh;
-  }
   .lg\:h-screen {
     height: 100vh;
-  }
-  .lg\:max-h-none {
-    max-height: none;
   }
   .lg\:min-h-screen {
     min-height: 100vh;
@@ -2779,17 +2757,11 @@ p {
   .lg\:items-center {
     align-items: center;
   }
-  .lg\:gap-12 {
-    gap: 3rem;
-  }
   .lg\:gap-32 {
     gap: 8rem;
   }
   .lg\:gap-4 {
     gap: 1rem;
-  }
-  .lg\:overflow-hidden {
-    overflow: hidden;
   }
   .lg\:overflow-x-auto {
     overflow-x: auto;
