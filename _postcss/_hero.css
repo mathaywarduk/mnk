@@ -1,0 +1,41 @@
+.hero {
+  @screen lg {
+    height: calc(100vh - 160px);
+  }
+  @screen xl {
+    height: calc(100vh - 125px);
+  }
+}
+
+.hero-image {
+  @apply
+    w-full
+    object-cover
+  ;
+  @screen lg {
+    width: auto;
+    max-height: calc(100vh - 160px - 128px);
+  }
+  @screen xl {
+    width: auto;
+    max-height: calc(100vh - 125px - 96px);
+  }
+}
+/*
+
+.hero-image--4\:3 {
+  @apply
+    aspect-4/3
+  ;
+}
+
+
+.hero-image--3\:4 {
+    @apply
+      aspect-4/3
+    ;
+
+    @screen lg {
+      aspect-ratio: 3/4;
+    }
+}*/

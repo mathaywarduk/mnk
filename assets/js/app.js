@@ -1,1 +1,208 @@
-function ImageContent(e){const t=e.querySelector("[data-image-content-open]"),o=e.querySelector("[data-image-content-close]"),n=e.querySelector("[data-image-content-target]");t.addEventListener("click",function(){n.classList.remove("opacity-0"),t.classList.add("hidden")}),o.addEventListener("click",function(){n.classList.add("opacity-0"),t.classList.remove("hidden")})}function ScrollToHash(){const e=window.location.hash;if(e){const t=document.querySelector(e);if(!t)return;window.innerWidth<1024?t.scrollIntoView({behavior:"smooth",block:"center"}):t.scrollIntoView({behavior:"smooth",inline:"center"})}}function loadImage(e){if("done"===e.dataset.lazy)return;e.dataset.lazy="done";const t=e.querySelector("img"),o=e.getBoundingClientRect();let n=o.width||window.innerWidth;"cover"===getComputedStyle(t).objectFit&&t.width&&t.height&&(n=Math.max(n,o.height*(t.width/t.height))),t.addEventListener("load",function(){e.classList.add("is-loaded"),fixGalleryRatio(e,t)},{once:!0}),t.sizes=Math.ceil(n)+"px",t.srcset=t.dataset.srcset}function LazyImage(e){imageObserver.observe(e)}function loadVideo(e){clearTimeout(e._unloadTimer);let t=e.querySelector("video");return t||((t=document.createElement("video")).muted=!0,t.loop=!0,t.playsInline=!0,t.setAttribute("muted",""),t.setAttribute("playsinline",""),t.preload="auto",t.addEventListener("playing",function(){t.classList.add("is-playing")}),t.src=e.dataset.src,e.append(t)),t}function unloadVideo(e){clearTimeout(e._unloadTimer),e._unloadTimer=setTimeout(function(){const t=e.querySelector("video");t&&(t.pause(),t.removeAttribute("src"),t.load(),t.remove())},UNLOAD_DELAY)}function isActiveSlide(e){const t=e.closest(".splide__slide");return!t||t.classList.contains("is-active")}function updateVideo(e){if(e._visible&&isActiveSlide(e)){const t=loadVideo(e).play();t&&t["catch"](function(){})}else{const t=e.querySelector("video");t&&t.pause()}}function Video(e){videoObserver.observe(e)}function loadGalleryNeighbours(e){const t=e.querySelector(".splide__track").getBoundingClientRect();e.querySelectorAll("[data-lazy]:not([data-lazy='done'])").forEach(function(e){const o=e.getBoundingClientRect();o.right>t.left-t.width&&o.left<t.right+t.width&&loadImage(e)})}function fixGalleryRatio(e,t){const o=e.closest(".gallery-media");if(!o||o.style.getPropertyValue("--ar"))return;o.style.setProperty("--ar",t.naturalWidth/t.naturalHeight);const n=o.closest("[data-gallery]");n&&n._splide&&n._splide.refresh()}function Gallery(e){if(!window.Splide)return;const t=new Splide(e,{autoWidth:!0,gap:"1.5em",speed:600,easing:"cubic-bezier(0.25, 1, 0.5, 1)",flickPower:400,snap:!0,trimSpace:!1,breakpoints:{1023:{focus:"center"}}});t.on("moved",function(){loadGalleryNeighbours(e)}),t.on("active inactive",function(e){e.slide.querySelectorAll("[data-video]").forEach(updateVideo)}),t.mount(),e._splide=t,galleryObserver.observe(e)}const imageObserver=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(imageObserver.unobserve(e.target),loadImage(e.target))})},{rootMargin:"50% 25%"}),UNLOAD_DELAY=2e3,videoObserver=new IntersectionObserver(function(e){e.forEach(function(e){e.target._visible=e.intersectionRatio>=.6,updateVideo(e.target),e.isIntersecting||unloadVideo(e.target)})},{threshold:[0,.6]}),galleryObserver=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(galleryObserver.unobserve(e.target),loadGalleryNeighbours(e.target))})},{rootMargin:"100% 0%"});window.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("[data-image-content]").forEach(ImageContent),document.querySelectorAll("[data-gallery]").forEach(Gallery),document.querySelectorAll("[data-lazy]").forEach(LazyImage),document.querySelectorAll("[data-video]").forEach(Video),document.querySelectorAll("[data-scroll-to-hash]").forEach(ScrollToHash)});
+// *** IMAGE WITH CONTENT *** //
+function ImageContent(el) {
+  const opener = el.querySelector("[data-image-content-open]");
+  const closer = el.querySelector("[data-image-content-close]");
+  const target = el.querySelector("[data-image-content-target]");
+
+  opener.addEventListener("click", function() {
+    target.classList.remove('opacity-0');
+    opener.classList.add('hidden');
+  });
+
+  closer.addEventListener("click", function() {
+    target.classList.add('opacity-0');
+    opener.classList.remove('hidden');
+  });
+}
+
+// *** HORIZONTAL SCROLL *** //
+function ScrollToHash(el){
+  const hash = window.location.hash;
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (!target) return;
+    if (window.innerWidth < 1024) {
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      target.scrollIntoView({ behavior: "smooth", inline: "center" });
+    }
+  }
+}
+
+
+// *** LAZY IMAGES *** //
+// Swap the tiny blurred placeholder for a properly sized image once it's
+// close to the viewport, then fade it in.
+function loadImage(picture) {
+  if (picture.dataset.lazy === "done") return;
+  picture.dataset.lazy = "done";
+
+  const img = picture.querySelector("img");
+  const box = picture.getBoundingClientRect();
+  let width = box.width || window.innerWidth;
+
+  // object-fit: cover crops, so the image may need to be wider than its box
+  if (getComputedStyle(img).objectFit === "cover" && img.width && img.height) {
+    width = Math.max(width, box.height * (img.width / img.height));
+  }
+
+  img.addEventListener("load", function() {
+    picture.classList.add("is-loaded");
+    fixGalleryRatio(picture, img);
+  }, { once: true });
+  img.sizes = Math.ceil(width) + "px";
+  img.srcset = img.dataset.srcset;
+}
+
+const imageObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      imageObserver.unobserve(entry.target);
+      loadImage(entry.target);
+    }
+  });
+}, { rootMargin: "50% 25%" });
+
+function LazyImage(el) {
+  imageObserver.observe(el);
+}
+
+
+// *** VIDEO *** //
+// Videos only exist while they're on screen. The poster image shows until the
+// video is actually playing, then the video fades in over it. Once it's fully
+// off screen for a moment the video is removed to free up memory/bandwidth.
+// In a gallery, only the active slide's video plays.
+const UNLOAD_DELAY = 2000;
+
+function loadVideo(el) {
+  clearTimeout(el._unloadTimer);
+  let video = el.querySelector("video");
+
+  if (!video) {
+    video = document.createElement("video");
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.preload = "auto";
+    video.addEventListener("playing", function() {
+      video.classList.add("is-playing");
+    });
+    video.src = el.dataset.src;
+    el.append(video);
+  }
+
+  return video;
+}
+
+function unloadVideo(el) {
+  clearTimeout(el._unloadTimer);
+  el._unloadTimer = setTimeout(function() {
+    const video = el.querySelector("video");
+    if (!video) return;
+    video.pause();
+    video.removeAttribute("src");
+    video.load();
+    video.remove();
+  }, UNLOAD_DELAY);
+}
+
+function isActiveSlide(el) {
+  const slide = el.closest(".splide__slide");
+  return !slide || slide.classList.contains("is-active");
+}
+
+// Play or pause a video based on whether it's on screen and active
+function updateVideo(el) {
+  if (el._visible && isActiveSlide(el)) {
+    const playing = loadVideo(el).play();
+    if (playing) playing.catch(function() {});
+  } else {
+    const video = el.querySelector("video");
+    if (video) video.pause();
+  }
+}
+
+const videoObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    entry.target._visible = entry.intersectionRatio >= 0.6;
+    updateVideo(entry.target);
+    if (!entry.isIntersecting) unloadVideo(entry.target);
+  });
+}, { threshold: [0, 0.6] });
+
+function Video(el) {
+  videoObserver.observe(el);
+}
+
+
+// *** GALLERY *** //
+// Gallery tracks clip their slides, so the viewport observer can't see slides
+// that are off to the side. Preload images for anything within a screen
+// either side of where the gallery is now.
+function loadGalleryNeighbours(gallery) {
+  const track = gallery.querySelector(".splide__track").getBoundingClientRect();
+  gallery.querySelectorAll("[data-lazy]:not([data-lazy='done'])").forEach(function(picture) {
+    const box = picture.getBoundingClientRect();
+    if (box.right > track.left - track.width && box.left < track.right + track.width) {
+      loadImage(picture);
+    }
+  });
+}
+
+// Fallback for media we didn't know the size of at build time
+function fixGalleryRatio(picture, img) {
+  const media = picture.closest(".gallery-media");
+  if (!media || media.style.getPropertyValue("--ar")) return;
+  media.style.setProperty("--ar", img.naturalWidth / img.naturalHeight);
+  const gallery = media.closest("[data-gallery]");
+  if (gallery && gallery._splide) gallery._splide.refresh();
+}
+
+const galleryObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      galleryObserver.unobserve(entry.target);
+      loadGalleryNeighbours(entry.target);
+    }
+  });
+}, { rootMargin: "100% 0%" });
+
+function Gallery(el) {
+  if (!window.Splide) return;
+
+  const splide = new Splide(el, {
+    autoWidth: true,
+    gap: "1.5em",
+    speed: 600,
+    easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+    flickPower: 400,
+    snap: true,
+    trimSpace: false,
+    breakpoints: {
+      1023: { focus: "center" },
+    },
+  });
+  splide.on("moved", function() {
+    loadGalleryNeighbours(el);
+  });
+  splide.on("active inactive", function(slide) {
+    slide.slide.querySelectorAll("[data-video]").forEach(updateVideo);
+  });
+  splide.mount();
+  el._splide = splide;
+
+  galleryObserver.observe(el);
+}
+
+
+// *** INIT *** //
+window.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll("[data-image-content]").forEach(ImageContent);
+  document.querySelectorAll("[data-gallery]").forEach(Gallery);
+  document.querySelectorAll("[data-lazy]").forEach(LazyImage);
+  document.querySelectorAll("[data-video]").forEach(Video);
+  document.querySelectorAll("[data-scroll-to-hash]").forEach(ScrollToHash);
+});

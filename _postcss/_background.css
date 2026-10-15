@@ -1,0 +1,39 @@
+.bg-leaf-blue {
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/leaf_blue.png");
+  background-size: 60%;
+
+ /* @screen md {
+    background-size: 40%;
+  }
+
+  @screen xl {
+    background-size: 30%;
+  }*/
+
+  @screen xxl {
+    background-size: 600px;
+  }
+
+}
+
+.bg-leaf-orange {
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/leaf_orange.png");
+  background-size: 60%;
+
+/*  @screen md {
+    background-size: 40%;
+  }
+
+  @screen xl {
+    background-size: 30%;
+  }*/
+
+  @screen xxl {
+    background-size: 600px;
+  }
+
+}

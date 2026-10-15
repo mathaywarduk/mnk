@@ -1,0 +1,27 @@
+@layer utilities {
+  a.link {
+  @apply
+    inline
+    text-md
+    font-sans
+    c-buff
+    no-underline
+    transition-all
+    duration-1000
+    ease-in-out
+  ;
+
+    background-image: linear-gradient(90deg, var(--pink) 0%, var(--pink) 50%, var(--buff) 50%, var(--buff) 100%);
+    background-origin: padding-box;
+    background-size: 200% 2px;
+    background-position: 100% 90%;
+    background-repeat: no-repeat;
+  }
+
+  a.link:hover,
+  a.link:focus {
+    @apply c-pink;
+    background-position: 0% 90%;
+  }
+
+}

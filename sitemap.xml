@@ -1,1 +1,11 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> <url> <loc>https://bagelbagel.world</loc> <lastmod>2026-10-15T18:09:43+01:00</lastmod> <changefreq>monthly</changefreq> <priority>0.5</priority> </url> </urlset>
+---
+layout: null
+---
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+      <loc>{{ site.url }}</loc>
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+</urlset>

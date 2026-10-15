@@ -1,0 +1,20 @@
+{% comment %}
+  Params: url, alt, classes, block_classes, width, height
+    sizes – srcset sizes for eager images (lazy images measure themselves)
+    eager – load straight away with high priority (use for the hero)
+{% endcomment %}
+{% assign dims = include.url | media_dimensions %}
+{% assign w = dims[0] | default: include.width %}
+{% assign h = dims[1] | default: include.height %}
+{% capture src %}{{ site.image_base }}{{ include.url }}{% endcapture %}
+{% capture srcset %}{% for size in site.image_widths %}{{ src }}?w={{ size }}&auto=format,compress {{ size }}w{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}
+
+{% if include.eager %}
+<picture class="{{ include.block_classes }}">
+  <img src="{{ src }}?w=1280&auto=format,compress" srcset="{{ srcset }}" sizes="{{ include.sizes | default: '100vw' }}" alt="{{ include.alt }}" width="{{ w }}" height="{{ h }}" class="{{ include.classes }}" fetchpriority="high" decoding="async">
+</picture>
+{% else %}
+<picture class="lazy-media {{ include.block_classes }}" style="background-image: url('{{ src }}?w=32&blur=20&q=30&auto=format')" data-lazy>
+  <img alt="{{ include.alt }}" width="{{ w }}" height="{{ h }}" class="{{ include.classes }}" data-srcset="{{ srcset }}" decoding="async">
+</picture>
+{% endif %}

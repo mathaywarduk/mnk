@@ -1,0 +1,68 @@
+@layer utilities {
+  .container {
+    @apply
+      max-w-container
+      px-[3vw]
+      mx-auto
+    ;
+  }
+
+  .no-container {
+    @apply
+      max-w-none
+      p-0
+      lg:p-0
+    ;
+  }
+
+  .bleed {
+    @apply
+      p-0
+      max-w-none
+      -mx-[3vw]
+    ;
+  }
+
+  .no-bleed {
+    @apply
+      mx-0
+    ;
+  }
+}
+
+.content-bleed {
+  @apply -ml-[3vw];
+
+  @screen lg {
+    margin-left: calc(-2 * (100% / 6) - 3vw - 8px);
+  }
+
+  @screen xl {
+    margin-left: calc( -2 * (100% / 4) - 3vw - 8px);
+  }
+
+  @media (min-width: 1640px) {
+    margin-left: calc( -2 * (100% / 4) - 3vw - 8px - (((100vw - 14px) - 102.5rem) / 2));
+  }
+}
+
+
+
+.content-bleed-right {
+
+  @screen md {
+    margin-right: calc(-1 * ((100vw - 6vw)/4));
+  }
+
+  @screen lg {
+    margin-right: calc(-1 * ((100vw - 6vw)/3));
+  }
+
+  @screen xl {
+    margin-right: calc(-1 * ((100vw - 6vw)/2));
+  }
+
+  @media (min-width: 1640px) {
+    margin-right: calc(-1 * ((102.5rem - 6vw)/2));
+  }
+}

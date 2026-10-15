@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<h1 class="sr-only">{{ site.title }}</h1>
+
+<div class="absolute transition-all duration-500 ease-in-out" > 
+    <div class="container lg:no-container lg:flex lg:w-full lg:h-screen lg:overflow-x-auto lg:overflow-y-hidden lg:items-end" data-scroll-to-hash>
+      <ul class="flex flex-col lg:flex-row lg:items-end border-spaced-left lg:border-spaced-bottom gap-8 lg:gap-32 lg:px-[25vw] mb-[75vh] lg:mb-0 lg:pb-44">
+      {% for post in site.posts %}
+        {% assign currentDate = post.date %}
+        {% assign currentYear = currentDate | date: "%Y" %}
+
+        {% if currentYear != year %}
+          <li id="y{{currentDate | date: '%Y'}}" class="b-buff-light sticky top-5"><h2 class="text-2xl font-bold mb-4 lg:mb-0">{{ currentYear }}</h2></li>
+          {% assign year = currentYear %} 
+          {% assign margin = 0 %}
+        {% else %}
+          {% assign currentMonth = currentDate | date: "%m" | plus: 0 %}
+          {% assign diff = month | minus: currentMonth %}
+          {% if diff > 0 %}
+            {% assign margin = month | minus: currentMonth | times: 12 %} 
+          {% else %}
+            {% assign margin = 0 %}
+          {% endif %}
+          {% assign month = currentMonth %}
+        {% endif %}
+        
+        <li id="post-{{ post.slug }}" class="shrink-0 mt-{{ margin }} lg:ml-{{ margin }} {% if post.featured == true %} lg:w-96 {% else %} max-w-2/3 lg:w-52 pl-4 lg:pl-0 {% endif %}">
+          {% if post.featured %}
+            {% include teaser-featured.html post=post %}
+          {% else %}
+            {% include teaser.html post=post %}
+          {% endif %}
+        </li>
+
+      {% endfor %}
+        <li class="pl-4 lg:pl-0 mt-[20vh] lg:mt-0 lg:ml-[20vw] relative text-black
+        before:w-3 before:h-3 before:absolute before:top-1.5 before:-left-0.5 before:rounded-full before:b-grey-dark lg:before:top-auto lg:before:-bottom-9 lg:after:w-px lg:after:b-grey-dark lg:after:h-8 lg:after:absolute lg:after:-bottom-7 lg:after:left-[3.5px] lg:after:z-0"><h3 class="mb-0">More adventures coming soon!</h3></li>
+      </ul>
+    </div>
+  </div>
+</div>

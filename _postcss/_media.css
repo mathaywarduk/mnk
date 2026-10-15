@@ -1,0 +1,78 @@
+/* *** LAZY IMAGES *** */
+/* A tiny blurred image sits in the background until the real one fades in */
+.lazy-media {
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Uses an animation rather than a transition so it doesn't clobber any
+   hover transitions already on the image */
+.lazy-media:not(.is-loaded) img {
+  opacity: 0;
+}
+
+.lazy-media.is-loaded img {
+  animation: lazy-fade-in 0.5s ease-out;
+}
+
+@keyframes lazy-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* *** GALLERY *** */
+/*
+  Every slide shares the same height. Each piece of media is sized from its
+  own aspect ratio (--ar), so portrait fills the height and landscape is
+  capped to the screen width and sits centred.
+*/
+.gallery {
+  --gallery-h: min(72svh, 125vw);
+  --gallery-max-w: 88vw;
+}
+
+@screen lg {
+  .gallery {
+    --gallery-h: 75vh;
+    --gallery-max-w: 80vw;
+  }
+}
+
+.gallery .splide__slide {
+  height: var(--gallery-h);
+  display: flex;
+  align-items: center;
+}
+
+.gallery-media {
+  position: relative;
+  aspect-ratio: var(--ar, 0.75);
+  width: min(calc(var(--gallery-h) * var(--ar, 0.75)), var(--gallery-max-w));
+}
+
+.gallery-media > picture,
+.gallery-media img,
+.gallery-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* *** VIDEO *** */
+/* The video sits over its poster image and fades in once it's playing */
+.gallery-media video,
+[data-video] video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+.gallery-media video.is-playing,
+[data-video] video.is-playing {
+  opacity: 1;
+}
