@@ -1,3 +1,7 @@
 for f in *.MOV; do ffmpeg -i "$f" -vcodec libx264 -acodec aac "${f%.*}.mp4"; done
 for f in *.MOV; do ffmpeg -i "$f" -c:v libvpx-vp9 -c:a libopus "${f%.*}.webm"; done
 for f in *.mp4; do ffmpeg -i "$f" -c:v libvpx-vp9 -b:v 0 -crf 30 -c:a libopus "${f%.*}.webm"; done
+
+# Web-friendly version for the galleries (videos play muted, so drop the audio).
+# Caps the short side at 1080px and 30fps, starts streaming straight away (faststart).
+for f in *.MOV; do ffmpeg -i "$f" -an -vf "fps=30,scale='if(gt(iw,ih),-2,min(1080,iw))':'if(gt(iw,ih),min(1080,ih),-2)'" -c:v libx264 -preset slow -crf 28 -pix_fmt yuv420p -movflags +faststart "${f%.*}.mp4"; done
