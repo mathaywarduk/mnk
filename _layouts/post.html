@@ -46,7 +46,7 @@ layout: default
       <li class="px-1 flex flex-col items-start">
         <span class="uppercase tracking-wide lg:text-xs">Next</span>
 
-        <a class="font-display text-lg link" href="{{ page.next.url }}">{{ page.next.title }}</a>
+        <a class="link" href="{{ page.next.url }}">{{ page.next.title }}</a>
       </li>
     {% endif %}
 
@@ -54,7 +54,7 @@ layout: default
       <li class="md:ml-auto px-1 text-right pb-4 md:pb-0 flex flex-col items-end">
         <span class="uppercase tracking-wide lg:text-xs">Previous</span>
 
-        <a class="font-display text-md link" href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+        <a class="link" href="{{ page.previous.url }}">{{ page.previous.title }}</a>
       </li>
     {% endif %}
   </ul>

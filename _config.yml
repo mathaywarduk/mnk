@@ -13,6 +13,8 @@ exclude:
 permalink: /:year/:title
 image_widths: [320, 480, 640, 800, 1024, 1280, 1600, 1920, 2560]
 jekyll-minifier:
+  # CSS is minified by cssnano (see postcss.config.js) – this one breaks clamp()
+  compress_css: false
   uglifier_args:
     harmony: true
 # The postcss cache only notices changes to files imported directly by
