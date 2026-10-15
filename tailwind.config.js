@@ -42,8 +42,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        serif: ["marlide-display-variable", ...defaultTheme.fontFamily.serif],
-        sans: ["elido", ...defaultTheme.fontFamily.sans],
+        serif: ["Gambetta", ...defaultTheme.fontFamily.serif],
+        sans: ["Satoshi", ...defaultTheme.fontFamily.sans],
       },
       maxWidth: {
         "container": "102.5rem",

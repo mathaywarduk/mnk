@@ -12,7 +12,7 @@ layout: default
         {% assign currentYear = currentDate | date: "%Y" %}
 
         {% if currentYear != year %}
-          <li id="y{{currentDate | date: '%Y'}}" class="b-buff-light sticky top-5"><h2 class="text-2xl mb-4 lg:mb-0">{{ currentYear }}</h2></li>
+          <li id="y{{currentDate | date: '%Y'}}" class="b-buff-light sticky top-5"><h2 class="text-2xl font-bold mb-4 lg:mb-0">{{ currentYear }}</h2></li>
           {% assign year = currentYear %} 
           {% assign margin = 0 %}
         {% else %}
